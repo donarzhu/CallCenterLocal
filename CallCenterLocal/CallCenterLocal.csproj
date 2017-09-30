@@ -109,6 +109,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Control\HttpControl.cs" />
+    <Compile Include="Control\PhoneLib.cs" />
     <Compile Include="Data\DialPhoneInfo.cs" />
     <Compile Include="Data\ResultWorkflows.cs" />
     <Compile Include="Data\TestWorkflow.cs" />

@@ -14,6 +14,7 @@ namespace CallCenterLocal
 {
     public partial class TestPageDialog : Form
     {
+        CallPhoneControl phoneControl = new CallPhoneControl();
         public TestPageDialog()
         {
             InitializeComponent();
@@ -65,6 +66,7 @@ namespace CallCenterLocal
                     MessageBox.Show("测试发送成功。请等待测试开始！");
                     return;
                 }
+                phoneControl.startDialPstn(result.result, this.Token.token);
 
 
             }

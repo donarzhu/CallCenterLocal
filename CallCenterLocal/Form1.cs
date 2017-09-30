@@ -33,9 +33,12 @@ namespace CallCenterLocal
         private bool isExit = false;
         private Token Token = new Token();
         private ChromiumWebBrowser browser;
+        private CallPhoneControl phoneControl = new CallPhoneControl();
         public Form1()
         {
             InitializeComponent();
+
+            phoneControl.openDevInit();
             //Cef.Initialize(new CefSettings());
             var setting = new CefSharp.CefSettings()
             {
@@ -100,10 +103,13 @@ namespace CallCenterLocal
                             {
                                 String retString = HttpControl.GetHttpResponseList<DialPhoneInfo>(HttpControl.GetNeedCallPhoneCmd, 50000,Token.token);
                                 List<DialPhoneInfo> infos = (List<DialPhoneInfo>)HttpControl.JSONStringToList<DialPhoneInfo>(retString);
+                                DialPhoneInfo[] dialInfos = new DialPhoneInfo[infos.Count];
+                                int i = 0;
                                 foreach (DialPhoneInfo info  in infos)
                                 {
-                                    int id = info.id;
+                                    dialInfos[++i] = info;
                                 }
+                                phoneControl.startDialPstn(dialInfos, this.Token.token);
                             }
                             catch (Exception ex)
                             {
@@ -151,6 +157,7 @@ namespace CallCenterLocal
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
+            phoneControl.closeDev();
             Cef.Shutdown();
             this.isExit = true;
         }
