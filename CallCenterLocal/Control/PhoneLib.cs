@@ -5,30 +5,67 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace CallCenterLocal.Control
 {
 
     public class CallPhoneControl
     {
+        private static phoneDll.PHONE phone = new phoneDll.PHONE();
         static string AppPath = System.Windows.Forms.Application.StartupPath;
         public string playFilePath { get; set; } = AppPath + "\\playvioce";
         public string recFullPath { get; set; } = AppPath + "\\full";
         public string recSinglePath { get; set; } = AppPath + "\\single";
-
+        public static bool initVad = false;
         public void  openDevInit()
         {
-            PhoneLib.openDevInit();
+            try
+            {
+                phone.openDevInit();
+                initVad = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         public void closeDev()
         {
-            PhoneLib.closeDev();
+            if (!initVad)
+                return;
+            try
+            {
+                phone.closeDev();
+            }
+            catch(Exception e)
+            {
+            }
         }
 
         public Int32 startDialPstn(DialPhoneInfo[] dialData, string token)
         {
-            return PhoneLib.startDialPstn(dialData, token, this.playFilePath, this.recFullPath, this.recSinglePath);
+            phoneDll.PHONE.tag_dial_Data[] m_tagdialData1 = new phoneDll.PHONE.tag_dial_Data[dialData.Length];
+            for(int i = 0;i<dialData.Length;i++)
+            {
+                m_tagdialData1[i].channalUuid = dialData[i].channal_uuid;
+                m_tagdialData1[i].dialNumber = dialData[i].cust_number;
+                m_tagdialData1[i].flowID = dialData[i].flow_id;
+                m_tagdialData1[i].ID = dialData[i].id;
+
+            }
+            if (!initVad)
+                return -1;
+            try
+            {
+                return phone.startDialPstn(m_tagdialData1, token, this.playFilePath, this.recFullPath, this.recSinglePath);
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show("VAD模块调用失败！");
+                return -1;
+            }
         }
     }
 
@@ -43,21 +80,21 @@ namespace CallCenterLocal.Control
         //    public int ID;
 
         //}
-        public const string PHONEDLLNAME = "phoneDll.dll";
+        // public const string PHONEDLLNAME = "phoneDll.dll";
 
         // 打开设备@"C:\MSDEV\Projects\openwind\Debug\openwind.dll", EntryPoint = "OpenWind_Sub", CharSet = CharSet.Ansi, CallingConvention = CallingConvention.Cdecl)]
-        [DllImport("phoneDll.dll", EntryPoint = "openDevInit")]
+        //[DllImport("phoneDll.dll", EntryPoint = "openDevInit")]
 
         public static extern void openDevInit();
 
         // 关闭设备
-        [DllImport("phoneDll.dll")]
+        //[DllImport("phoneDll.dll")]
         public static extern void closeDev();
 
         // dial 
-        [DllImport("phoneDll.dll")]
+        //[DllImport("phoneDll.dll")]
         public static extern Int32 startDialPstn(DialPhoneInfo[] dialData, string token, string sPlayFilePath, string sRcFullPath, string sRecSinglePath);
 
     }
-}
+
 }

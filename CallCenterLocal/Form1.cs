@@ -24,8 +24,8 @@ namespace CallCenterLocal
 {
     public partial class Form1 : Form
     {
-        public const string server = "http://192.168.199.139:8080";
-        public const string URL= "http://192.168.199.139:8080/static/dist/index.html";
+        public const string server = "http://114.215.68.77:8000";
+        public const string URL= "http://114.215.68.77:8000/static/dist/index.html";
         public const int ThreadSleepTime = 2000;
         public const int ThreadShortSleep = 500;
         private ICookieManager mCookieManager;
@@ -34,10 +34,12 @@ namespace CallCenterLocal
         private Token Token = new Token();
         private ChromiumWebBrowser browser;
         private CallPhoneControl phoneControl = new CallPhoneControl();
+        frmWaitingBox waitingBox = null;
+        private Form1 my = null;
         public Form1()
         {
             InitializeComponent();
-
+            my = this;
             phoneControl.openDevInit();
             //Cef.Initialize(new CefSettings());
             var setting = new CefSharp.CefSettings()
@@ -61,13 +63,24 @@ namespace CallCenterLocal
             
             mCookieManager = CefSharp.Cef.GetGlobalCookieManager();
             browser.FrameLoadEnd += Browser_FrameLoadEnd;
-            
 
+            waitingBox = new frmWaitingBox((obj, args) =>
+            {
+                
+            });
+            waitingBox.StartPosition = FormStartPosition.CenterScreen;
+            waitingBox.Show(this);
          }
-
+        private delegate void InvokeDelegate();
         private void Browser_FrameLoadEnd(object sender, FrameLoadEndEventArgs e)
         {
             //MessageBox.Show("页面载入完成");
+            my.BeginInvoke(new InvokeDelegate(() =>
+            {
+                waitingBox.Hide();
+                waitingBox.WindowClose();
+
+            }));
             string _url = e.Url;
             //判断是否是需要获取cookie的页面
             if (_url.Contains(server))
@@ -85,7 +98,8 @@ namespace CallCenterLocal
                 checkThread.Start();
             }
         }
-        void Set_CookieVisitor()
+
+         void Set_CookieVisitor()
         {
             //注册获取cookie回调事件
             CookieVisitor visitor = new CookieVisitor();
@@ -161,6 +175,11 @@ namespace CallCenterLocal
             Cef.Shutdown();
             this.isExit = true;
         }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = false;
+        }
     }
 
     public class CookieVisitor : CefSharp.ICookieVisitor
@@ -177,4 +196,6 @@ namespace CallCenterLocal
             return true;
         }
     }
+
+
  }
