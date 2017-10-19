@@ -25,7 +25,7 @@ namespace CallCenterLocal
     public partial class Form1 : Form
     {
         public const string server = "http://114.215.68.77:8000";
-        public const string URL= "http://114.215.68.77:8000/static/dist/index.html";
+        public const string URL = "http://114.215.68.77:8000/static/dist/index.html";
         public const int ThreadSleepTime = 2000;
         public const int ThreadShortSleep = 500;
         private ICookieManager mCookieManager;
@@ -60,17 +60,17 @@ namespace CallCenterLocal
             browserSettings.UniversalAccessFromFileUrls = CefState.Enabled;
             browserSettings.WebSecurity = CefState.Enabled;
             browser.BrowserSettings = browserSettings;
-            
+
             mCookieManager = CefSharp.Cef.GetGlobalCookieManager();
             browser.FrameLoadEnd += Browser_FrameLoadEnd;
 
             waitingBox = new frmWaitingBox((obj, args) =>
             {
-                
+
             });
             waitingBox.StartPosition = FormStartPosition.CenterScreen;
             waitingBox.Show(this);
-         }
+        }
         private delegate void InvokeDelegate();
         private void Browser_FrameLoadEnd(object sender, FrameLoadEndEventArgs e)
         {
@@ -87,7 +87,7 @@ namespace CallCenterLocal
             {
                 Thread checkThread = new Thread(() =>
                 {
-                    while (String.IsNullOrEmpty(Token.token)&&!isExit)
+                    while (String.IsNullOrEmpty(Token.token) && !isExit)
                     {
                         //mIsEndCheck = false;
                         Set_CookieVisitor();
@@ -99,14 +99,14 @@ namespace CallCenterLocal
             }
         }
 
-         void Set_CookieVisitor()
+        void Set_CookieVisitor()
         {
             //注册获取cookie回调事件
             CookieVisitor visitor = new CookieVisitor();
-            visitor.SendCookie += (Cookie obj)=> {
+            visitor.SendCookie += (Cookie obj) => {
                 Token.token = obj.Value;
                 //mIsEndCheck = true;
-                if(!String.IsNullOrEmpty(Token.token))
+                if (!String.IsNullOrEmpty(Token.token))
                 {
                     Thread getDialPhoneManagerThread = new Thread(() =>
                     {
@@ -115,13 +115,14 @@ namespace CallCenterLocal
                             Thread.Sleep(ThreadSleepTime);
                             try
                             {
-                                String retString = HttpControl.GetHttpResponseList<DialPhoneInfo>(HttpControl.GetNeedCallPhoneCmd, 50000,Token.token);
+                                String retString = HttpControl.GetHttpResponseList<DialPhoneInfo>(HttpControl.GetNeedCallPhoneCmd, 50000, Token.token);
                                 List<DialPhoneInfo> infos = (List<DialPhoneInfo>)HttpControl.JSONStringToList<DialPhoneInfo>(retString);
                                 DialPhoneInfo[] dialInfos = new DialPhoneInfo[infos.Count];
                                 int i = 0;
-                                foreach (DialPhoneInfo info  in infos)
+                                foreach (DialPhoneInfo info in infos)
                                 {
-                                    dialInfos[++i] = info;
+                                    dialInfos[i] = info;
+                                    i++;
                                 }
                                 phoneControl.startDialPstn(dialInfos, this.Token.token);
                             }
@@ -130,7 +131,7 @@ namespace CallCenterLocal
 
                             }
                         }
-                        
+
                     });
                     getDialPhoneManagerThread.Start();
                 }
@@ -138,14 +139,14 @@ namespace CallCenterLocal
             mCookieManager.VisitAllCookies(visitor);
         }
 
- 
+
         private void Form1_Load(object sender, EventArgs e)
         {
         }
 
         private void TestPageStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(String.IsNullOrEmpty(Token.token))
+            if (String.IsNullOrEmpty(Token.token))
             {
                 MessageBox.Show("请登录后再试！");
                 return;
@@ -153,23 +154,29 @@ namespace CallCenterLocal
             try
             {
                 TestPageDialog dlg = new TestPageDialog();
-                Token tempToken = new Token();
-                tempToken.token = "a08074ead1a8f3b4ffa42895b28d02938f3aacbf";
-                string param = HttpControl.ObjectToJson(tempToken);
-                ResultWorkflows getResult = (ResultWorkflows)HttpControl.PostMoths(HttpControl.GetWorkflowCmd, param,Token);
+                ResultWorkflows getResult = GetWorkflows(Token);
                 if (getResult == null || getResult.successful == false)
                     return;
                 dlg.Data = getResult;
                 dlg.Token = this.Token;
                 dlg.ShowDialog();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return;
             }
         }
 
-        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        private ResultWorkflows GetWorkflows(Token token)
+        {
+            Token tempToken = new Token();
+            tempToken.token = "208dbf9f968a432815a2b726ed49de0a669b5f27";//"a08074ead1a8f3b4ffa42895b28d02938f3aacbf";
+            var param = HttpControl.ObjectToJson(tempToken);
+            var getResult = HttpControl.PostMoths(HttpControl.GetWorkflowCmd, param, Token);
+            return (ResultWorkflows)getResult;
+        }
+
+    private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
             phoneControl.closeDev();
             Cef.Shutdown();
@@ -179,6 +186,25 @@ namespace CallCenterLocal
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             e.Cancel = false;
+        }
+
+        private void DownloadMenuItem_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(Token.token))
+            {
+                MessageBox.Show("请登录后再试！");
+                return;
+            }
+            Token tempToken = new Token();
+            tempToken.token = Token.token;//"a08074ead1a8f3b4ffa42895b28d02938f3aacbf";
+            ResultWorkflows getResult = GetWorkflows(Token);
+            if (getResult == null || getResult.successful == false)
+                return;
+            DownloadVoiceDialog dlg = new DownloadVoiceDialog();
+            dlg.Data = getResult;
+            dlg.Token = tempToken;
+            dlg.ShowDialog();
+
         }
     }
 

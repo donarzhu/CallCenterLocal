@@ -17,6 +17,8 @@ namespace CallCenterLocal.Control
         public const string GetWorkflowCmd = "http://123.59.82.44:8080/main-flow/list.do";
         public const string GetNeedCallPhoneCmd = Form1.server + "/api/view/task/get/call/";
         public const string TestWorkflowCmd = Form1.server + "/api/view/task/tocall/";
+        public const string GetFtpInfoCmd = "http://106.75.65.223" + "/api/file/geturl/";
+
         public static string ObjectToJson(Object obj)
         {
             JavaScriptSerializer jsonSerialize = new JavaScriptSerializer();
@@ -73,13 +75,19 @@ namespace CallCenterLocal.Control
                 {
                     case GetWorkflowCmd:
                         {
-                            ResultWorkflows ret =  (ResultWorkflows)JsonToObject<ResultWorkflows>(strValue);
+                            var ret =  JsonToObject<ResultWorkflows>(strValue);
                             return ret;
                         }
                         break;
                     case TestWorkflowCmd:
                         {
-                            TestWorkflowResult ret = (TestWorkflowResult)JsonToObject<TestWorkflowResult>(strValue);
+                            var ret = JsonToObject<TestWorkflowResult>(strValue);
+                            return ret;
+                        }
+                        break;
+                    case GetFtpInfoCmd:
+                        {
+                            var ret = JsonToObject<ResultFtpInfo>(strValue);
                             return ret;
                         }
                         break;

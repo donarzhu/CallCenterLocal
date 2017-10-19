@@ -41,6 +41,7 @@ namespace CallCenterLocal
             if (String.IsNullOrEmpty(workflowName))
             {
                 MessageBox.Show("请选择工作流程！");
+                return;
             }
             String workflowId = _dict[workflowName];
             if(!String.IsNullOrEmpty(workflowId))
@@ -63,8 +64,7 @@ namespace CallCenterLocal
                 }
                 if(result.status==0)
                 {
-                    MessageBox.Show("测试发送成功。请等待测试开始！");
-                    return;
+                    MessageBox.Show("测试发送成功。");
                 }
                 phoneControl.startDialPstn(result.result, this.Token.token);
 
@@ -86,6 +86,11 @@ namespace CallCenterLocal
             {
                 e.Handled = true;
             }
+
+        }
+
+        private void TestPageDialog_Load(object sender, EventArgs e)
+        {
 
         }
     }

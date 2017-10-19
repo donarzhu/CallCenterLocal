@@ -31,6 +31,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.功能ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TestPageStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.DownloadMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,9 +48,10 @@
             // 功能ToolStripMenuItem
             // 
             this.功能ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.TestPageStripMenuItem});
+            this.TestPageStripMenuItem,
+            this.DownloadMenuItem});
             this.功能ToolStripMenuItem.Name = "功能ToolStripMenuItem";
-            this.功能ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.功能ToolStripMenuItem.Size = new System.Drawing.Size(94, 21);
             this.功能ToolStripMenuItem.Text = "功能";
             // 
             // TestPageStripMenuItem
@@ -57,9 +59,17 @@
             this.TestPageStripMenuItem.Checked = true;
             this.TestPageStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.TestPageStripMenuItem.Name = "TestPageStripMenuItem";
-            this.TestPageStripMenuItem.Size = new System.Drawing.Size(112, 22);
+            this.TestPageStripMenuItem.Size = new System.Drawing.Size(172, 22);
             this.TestPageStripMenuItem.Text = "测试页";
             this.TestPageStripMenuItem.Click += new System.EventHandler(this.TestPageStripMenuItem_Click);
+            // 
+            // DownloadMenuItem
+            // 
+            this.DownloadMenuItem.Name = "DownloadMenuItem";
+            this.DownloadMenuItem.Size = new System.Drawing.Size(172, 22);
+            this.DownloadMenuItem.Text = "流程语音文件下载";
+            this.DownloadMenuItem.Visible = false;
+            this.DownloadMenuItem.Click += new System.EventHandler(this.DownloadMenuItem_Click);
             // 
             // Form1
             // 
@@ -86,6 +96,7 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem 功能ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem TestPageStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem DownloadMenuItem;
     }
 }
 

@@ -40,7 +40,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(236)))), ((int)(((byte)(255)))));
+            this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.labTimer);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.labMessage);

@@ -14,9 +14,9 @@ namespace CallCenterLocal.Control
     {
         private static phoneDll.PHONE phone = new phoneDll.PHONE();
         static string AppPath = System.Windows.Forms.Application.StartupPath;
-        public string playFilePath { get; set; } = AppPath + "\\playvioce";
-        public string recFullPath { get; set; } = AppPath + "\\full";
-        public string recSinglePath { get; set; } = AppPath + "\\single";
+        public static string  playFilePath { get; } = AppPath + "\\playvoice\\";
+        public static string recFullPath { get; } = AppPath + "\\full\\";
+        public static string recSinglePath { get; } = AppPath + "\\full\\";
         public static bool initVad = false;
         public void  openDevInit()
         {
@@ -46,6 +46,8 @@ namespace CallCenterLocal.Control
 
         public Int32 startDialPstn(DialPhoneInfo[] dialData, string token)
         {
+            if (dialData.Length <= 0)
+                return -1;
             phoneDll.PHONE.tag_dial_Data[] m_tagdialData1 = new phoneDll.PHONE.tag_dial_Data[dialData.Length];
             for(int i = 0;i<dialData.Length;i++)
             {
@@ -53,13 +55,13 @@ namespace CallCenterLocal.Control
                 m_tagdialData1[i].dialNumber = dialData[i].cust_number;
                 m_tagdialData1[i].flowID = dialData[i].flow_id;
                 m_tagdialData1[i].ID = dialData[i].id;
-
+                m_tagdialData1[i].playFilePath = CPlayVoicePathManager.GetVoicePath(m_tagdialData1[0].flowID);
             }
             if (!initVad)
                 return -1;
             try
             {
-                return phone.startDialPstn(m_tagdialData1, token, this.playFilePath, this.recFullPath, this.recSinglePath);
+                return phone.startDialPstn(m_tagdialData1, token,  recFullPath, recSinglePath);
             }
             catch(Exception e)
             {

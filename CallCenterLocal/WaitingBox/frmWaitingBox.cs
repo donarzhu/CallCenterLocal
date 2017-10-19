@@ -104,8 +104,8 @@ namespace CallCenterLocal
             int g2 = g1 + 5;
             int b1 = r.Next(bMin, bMax);
             int b2 = b1 + 5;
-            Color c1 = Color.FromArgb(r1, g1, b1);
-            Color c2 = Color.FromArgb(r2, g2, b2);
+            Color c1 = Color.FromArgb(255, 255, 255);
+            Color c2 = Color.FromArgb(255, 255, 255);
             Color[] c = { c1, c2 };
             return c;
         }

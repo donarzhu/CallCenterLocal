@@ -122,6 +122,7 @@ namespace CallCenterLocal
             this.MinimizeBox = false;
             this.Name = "TestPageDialog";
             this.ShowIcon = false;
+            this.Load += new System.EventHandler(this.TestPageDialog_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
