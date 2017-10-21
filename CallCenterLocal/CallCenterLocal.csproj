@@ -118,8 +118,10 @@
     <Compile Include="Control\CPlayVoicePathManager.cs" />
     <Compile Include="Control\FtpHelper.cs" />
     <Compile Include="Control\HttpControl.cs" />
+    <Compile Include="Control\HttpManager.cs" />
     <Compile Include="Control\PhoneLib.cs" />
     <Compile Include="Control\SFTPHelper.cs" />
+    <Compile Include="Control\ZipHelper.cs" />
     <Compile Include="Data\DialPhoneInfo.cs" />
     <Compile Include="Data\ResultFtpInfo.cs" />
     <Compile Include="Data\ResultWorkflows.cs" />

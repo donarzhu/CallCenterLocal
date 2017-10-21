@@ -55,7 +55,7 @@ namespace CallCenterLocal
                 }
                 string param = HttpControl.ObjectToJson(flow);
                 string cmd = HttpControl.TestWorkflowCmd + "?" + "flow_id=" + flow.flow_id + "&numbers=" + flow.numbers;
-                String strResult = HttpControl.GetHttpResponseList< TestWorkflowResult>(cmd, 5000 ,this.Token.token);
+                String strResult = HttpControl.GetHttpResponseList(cmd, 5000 ,this.Token.token);
                 TestWorkflowResult result = (TestWorkflowResult)HttpControl.JsonToObject<TestWorkflowResult>(strResult);
                 if(result == null)
                 {

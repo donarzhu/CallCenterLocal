@@ -51,7 +51,7 @@
             this.TestPageStripMenuItem,
             this.DownloadMenuItem});
             this.功能ToolStripMenuItem.Name = "功能ToolStripMenuItem";
-            this.功能ToolStripMenuItem.Size = new System.Drawing.Size(94, 21);
+            this.功能ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
             this.功能ToolStripMenuItem.Text = "功能";
             // 
             // TestPageStripMenuItem
@@ -68,7 +68,6 @@
             this.DownloadMenuItem.Name = "DownloadMenuItem";
             this.DownloadMenuItem.Size = new System.Drawing.Size(172, 22);
             this.DownloadMenuItem.Text = "流程语音文件下载";
-            this.DownloadMenuItem.Visible = false;
             this.DownloadMenuItem.Click += new System.EventHandler(this.DownloadMenuItem_Click);
             // 
             // Form1
@@ -84,6 +83,7 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.Resize += new System.EventHandler(this.Form1_Resize);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

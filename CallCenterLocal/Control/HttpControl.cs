@@ -17,8 +17,10 @@ namespace CallCenterLocal.Control
         public const string GetWorkflowCmd = "http://123.59.82.44:8080/main-flow/list.do";
         public const string GetNeedCallPhoneCmd = Form1.server + "/api/view/task/get/call/";
         public const string TestWorkflowCmd = Form1.server + "/api/view/task/tocall/";
-        public const string GetFtpInfoCmd = "http://106.75.65.223" + "/api/file/geturl/";
-
+        public const string GeUrlInfoCmd = "http://106.75.65.223" + "/api/file/geturl/";
+        public const string GetZipFileCmd = "http://106.75.65.223" + "/api/file/download/";
+        public const string GetFileAutohrization = "secret e4142386f0abd1e66e5408548e968915";
+        public const string azHeader = "Authorization";
         public static string ObjectToJson(Object obj)
         {
             JavaScriptSerializer jsonSerialize = new JavaScriptSerializer();
@@ -51,8 +53,11 @@ namespace CallCenterLocal.Control
                 request = (System.Net.HttpWebRequest)WebRequest.Create(strURL);
                 request.Method = "POST";
                 request.ContentType = "application/json;charset=UTF-8";
-                if(url != GetWorkflowCmd)
-                    request.Headers.Add("Authorization", "Token " + token.token);
+                
+                if (url.IndexOf(GetWorkflowCmd)== -1)
+                {
+                   request.Headers.Add(azHeader, "Token " + token.token);
+                }
                 string paraUrlCoded = param;
                 byte[] payload;
                 payload = System.Text.Encoding.UTF8.GetBytes(paraUrlCoded);
@@ -85,10 +90,15 @@ namespace CallCenterLocal.Control
                             return ret;
                         }
                         break;
-                    case GetFtpInfoCmd:
+                    case GeUrlInfoCmd:
                         {
                             var ret = JsonToObject<ResultFtpInfo>(strValue);
                             return ret;
+                        }
+                        break;
+                    case GetZipFileCmd:
+                        {
+                            return strValue;
                         }
                         break;
                     default:
@@ -101,14 +111,17 @@ namespace CallCenterLocal.Control
             }
         }
 
-        public static string GetHttpResponseList<T>(string url, int Timeout,string token)
+        public static string GetHttpResponseList(string url, int Timeout,string token)
         {
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
             try
             {
                 request.Method = "GET";
                 request.ContentType = "application/json;charset=UTF-8 ";
-                request.Headers.Add("Authorization", "Token " + token);
+                if (url.IndexOf(GeUrlInfoCmd) >= 0 || url.IndexOf(GetZipFileCmd) >= 0)
+                    request.Headers.Add(azHeader, GetFileAutohrization);
+                else
+                    request.Headers.Add("Authorization", "Token " + token);
                 //request.Headers["Authorization"] = "Token " + token;
                 //request.PreAuthenticate = true;
                 //request.UserAgent = null;

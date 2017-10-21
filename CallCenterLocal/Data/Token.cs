@@ -10,4 +10,10 @@ namespace CallCenterLocal.Data
     {
         public string token { get; set; } = "";
     }
+
+    public class GetWorkflowData
+    {
+        public string token { get; set; } = "";
+        public string token_key { get; set; } = "DJ";
+    }
 }

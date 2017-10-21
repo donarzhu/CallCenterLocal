@@ -26,6 +26,7 @@ namespace CallCenterLocal
     {
         public const string server = "http://114.215.68.77:8000";
         public const string URL = "http://114.215.68.77:8000/static/dist/index.html";
+        const int topSpan = 60;
         public const int ThreadSleepTime = 2000;
         public const int ThreadShortSleep = 500;
         private ICookieManager mCookieManager;
@@ -50,10 +51,10 @@ namespace CallCenterLocal
             Cef.Initialize(setting);
             browser = new ChromiumWebBrowser(URL);
             //browser = new ChromiumWebBrowser("http://www.baidu.com");
-            browser.Height = 300;
-            browser.Width = 500;
+            browser.Height = this.Height - topSpan;
+            browser.Width = this.Width;
             this.Controls.Add(browser);
-            browser.Dock = DockStyle.Fill;
+            browser.Dock = DockStyle.Bottom;
 
             BrowserSettings browserSettings = new BrowserSettings();
             browserSettings.FileAccessFromFileUrls = CefState.Enabled;
@@ -115,7 +116,7 @@ namespace CallCenterLocal
                             Thread.Sleep(ThreadSleepTime);
                             try
                             {
-                                String retString = HttpControl.GetHttpResponseList<DialPhoneInfo>(HttpControl.GetNeedCallPhoneCmd, 50000, Token.token);
+                                String retString = HttpControl.GetHttpResponseList(HttpControl.GetNeedCallPhoneCmd, 50000, Token.token);
                                 List<DialPhoneInfo> infos = (List<DialPhoneInfo>)HttpControl.JSONStringToList<DialPhoneInfo>(retString);
                                 DialPhoneInfo[] dialInfos = new DialPhoneInfo[infos.Count];
                                 int i = 0;
@@ -169,9 +170,11 @@ namespace CallCenterLocal
 
         private ResultWorkflows GetWorkflows(Token token)
         {
-            Token tempToken = new Token();
-            tempToken.token = "208dbf9f968a432815a2b726ed49de0a669b5f27";//"a08074ead1a8f3b4ffa42895b28d02938f3aacbf";
-            var param = HttpControl.ObjectToJson(tempToken);
+            //Token tempToken = new Token();
+            //tempToken.token = "208dbf9f968a432815a2b726ed49de0a669b5f27";//"a08074ead1a8f3b4ffa42895b28d02938f3aacbf";
+            GetWorkflowData data = new GetWorkflowData();
+            data.token = token.token;
+            var param = HttpControl.ObjectToJson(data);
             var getResult = HttpControl.PostMoths(HttpControl.GetWorkflowCmd, param, Token);
             return (ResultWorkflows)getResult;
         }
@@ -181,6 +184,7 @@ namespace CallCenterLocal
             phoneControl.closeDev();
             Cef.Shutdown();
             this.isExit = true;
+            Application.Exit();
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -205,6 +209,13 @@ namespace CallCenterLocal
             dlg.Token = tempToken;
             dlg.ShowDialog();
 
+        }
+
+        private void Form1_Resize(object sender, EventArgs e)
+        {
+            browser.Height = this.Height - topSpan;
+            browser.Width = this.Width;
+            browser.Dock = DockStyle.Bottom;
         }
     }
 

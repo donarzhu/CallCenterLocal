@@ -63,39 +63,52 @@ namespace CallCenterLocal
                 TestWorkflow flow = new TestWorkflow();
                 flow.flow_id = workflowId;
                 string param = HttpControl.ObjectToJson(flow);
-                string cmd = HttpControl.GetFtpInfoCmd + flow.flow_id + "/bot/";
-                String strResult = HttpControl.GetHttpResponseList<ResultFtpInfo>(cmd, 5000, this.Token.token);
-                ResultFtpInfo result = (ResultFtpInfo)HttpControl.JsonToObject<ResultFtpInfo>(strResult);
-                if (result == null)
+                string cmd = HttpControl.GeUrlInfoCmd + flow.flow_id + "/bot/";
+                String strResult = HttpControl.GetHttpResponseList(cmd, 500, this.Token.token);
+                ResultFtpInfo ret = (ResultFtpInfo)HttpControl.JsonToObject<ResultFtpInfo>(strResult);
+                if (strResult == null)
                 {
                     MessageBox.Show("网络连接失败！");
                     return;
                 }
-                if (result.message != "成功")
+                if(ret.message != "成功")
+                {
+                    MessageBox.Show("网络连接失败！");
                     return;
+
+                }
                 if (isNewDownload)
                     this.downloadIndex = 0;
                 var filePath = CPlayVoicePathManager.GetVoicePath(flow.flow_id);
+                var objFullFileName = filePath + flow.flow_id.ToString() + ".zip";
                 Thread thread = new Thread(() =>
                 {
                     try
                     {
-                        var remotePath = result.data.url.Replace("ftp://" + result.data.ip+"/","");
-                        SFTPHelper helper = new SFTPHelper(result.data.ip, "22", result.data.user_name, result.data.password);
-                        var list = helper.GetFileList(remotePath,"*.*");
-                        for (int i = downloadIndex; i < list.Count; i++)
+                        long downSize = 0;
+                        long fileSize = 0;
+                        HttpManager.HttpDownloadFile(ret.data.url, objFullFileName, new UZipProgressDelegate((count, total)=>{
+                            this.BeginInvoke(new InvokeDelegate(() =>
+                            {
+                                downSize = total;
+                                fileSize = count;
+                                DownloadInfoTextBox.Text = "正在下载文件:"+ count.ToString() + "/" + total.ToString();
+                            }));
+                        }));
+                        if(downSize <= fileSize)
                         {
                             this.BeginInvoke(new InvokeDelegate(() =>
                             {
-                                downloadIndex = i;
-                                DownloadInfoTextBox.Text = this.downloadIndex.ToString() + "/" + list.Count.ToString();
+                                DownloadInfoTextBox.Text = "文件下载失败";
                             }));
-                            helper.Get(filePath, (String)list[i]);
-
+                            return;
                         }
-                        this.BeginInvoke(new InvokeDelegate(() =>
-                        {
-                            DownloadInfoTextBox.Text = list.Count.ToString().ToString() + "/" + list.Count.ToString();
+                        ZipHelper.UnZip2(objFullFileName, filePath, new UZipProgressDelegate((total, count) => {
+                            this.BeginInvoke(new InvokeDelegate(() =>
+                            {
+                                DownloadInfoTextBox.Text = "解压文件进度"+total.ToString() + "/" + count.ToString();
+                            }));
+
                         }));
                     }
                     catch(Exception ex)

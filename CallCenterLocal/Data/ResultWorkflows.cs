@@ -15,7 +15,7 @@ namespace CallCenterLocal.Data
 
     public class Workflow
     {
-        public int account_id { get; set; }
+        public string account_id { get; set; }
         public string content { get; set; }
         public DateTime create_time { get; set; }
         public string id { get; set; }
