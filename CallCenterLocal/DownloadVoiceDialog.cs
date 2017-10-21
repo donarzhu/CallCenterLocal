@@ -110,6 +110,7 @@ namespace CallCenterLocal
                             }));
 
                         }));
+                        MessageBox.Show("下载完成！");
                     }
                     catch(Exception ex)
                     {
@@ -123,6 +124,11 @@ namespace CallCenterLocal
         }
 
         private void DownloadVoiceDialog_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FlowComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

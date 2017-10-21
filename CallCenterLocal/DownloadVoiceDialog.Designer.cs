@@ -52,6 +52,7 @@
             this.FlowComboBox.Name = "FlowComboBox";
             this.FlowComboBox.Size = new System.Drawing.Size(209, 20);
             this.FlowComboBox.TabIndex = 1;
+            this.FlowComboBox.SelectedIndexChanged += new System.EventHandler(this.FlowComboBox_SelectedIndexChanged);
             // 
             // label2
             // 
