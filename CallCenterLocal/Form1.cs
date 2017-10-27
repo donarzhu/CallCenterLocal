@@ -25,7 +25,7 @@ namespace CallCenterLocal
     public partial class Form1 : Form
     {
         public const string server = "http://114.215.68.77:8000";
-        public const string URL = "http://114.215.68.77:8000/static/dist/index.html";
+        public const string URL = "https://webcamtoy.com";//"https://114.215.68.77/static/record.html";//"http://114.215.68.77:8000/static/dist/index.html";
         const int topSpan = 60;
         public const int ThreadSleepTime = 2000;
         public const int ThreadShortSleep = 500;
@@ -47,6 +47,8 @@ namespace CallCenterLocal
             {
                 CachePath = Directory.GetCurrentDirectory() + @"\Cache",
             };
+            setting.CefCommandLineArgs.Add("enable-media-stream", "1");
+            //setting.CefCommandLineArgs.Add("--disable-web-security", "1"); 
 
             Cef.Initialize(setting);
             browser = new ChromiumWebBrowser(URL);

@@ -1,0 +1,98 @@
+﻿<Window x:Class="CallCenterForWpf.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CallCenterForWpf"
+        xmlns:wpf="clr-namespace:CefSharp.Wpf;assembly=CefSharp.Wpf"
+        xmlns:vm="clr-namespace:CallCenterForWpf" 
+        mc:Ignorable="d"
+        Title="呼叫中心" Height="720" Width="1338.803" WindowStyle="None" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" Background="Transparent" AllowsTransparency="True" OpacityMask="White">
+    <Window.DataContext>
+        <vm:Window1ViewModel />
+    </Window.DataContext>
+    <Grid Margin="6,0,0,0" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <DockPanel x:Name="bro" Grid.Row="1">
+            <DockPanel Height="40" DockPanel.Dock="Top" MouseLeftButtonDown="DockPanel_MouseLeftButtonDown">
+                <DockPanel.Background>
+                    <ImageBrush ImageSource="Resources/title1.png"/>
+                </DockPanel.Background>
+                <Label DockPanel.Dock="Left" Content="呼叫中心" Height="30" VerticalAlignment="Center" FontSize="14" Width="80" Foreground="#FFFBFBFB" Margin="10,0,0,0"/>
+                <Canvas Name="closeButton" DockPanel.Dock="Right" Height="30" Width="30" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,5,10,0"  MouseLeftButtonDown="Image_MouseLeftButtonDown">
+                    <Canvas.Background>
+                        <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/close.png"/>
+                    </Canvas.Background>
+                </Canvas>
+
+            </DockPanel>
+            <StackPanel Orientation="Vertical" DockPanel.Dock="Left" Width="150" MouseLeftButtonDown="StackPanel_MouseLeftButtonDown">
+                <StackPanel.Background>
+                    <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/page-bg.jpg"/>
+                </StackPanel.Background>
+                <Canvas Width="150" Height="50">
+                    <Button Content="外呼测试" Name="testPage" Command="{Binding ButtonCommand}" CommandParameter="testPage" Margin="-5,0,0,0" Width="150" Height="50" Foreground="#FFF7F7F7" BorderBrush="{x:Null}">
+                        <Button.Background>
+                            <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/bar06.png"/>
+                        </Button.Background>
+                    </Button>
+                </Canvas>
+                <Canvas Width="150" Height="50">
+                    <Button Content="知识库" Name="dataDir" Command="{Binding ButtonCommand}" CommandParameter="dataDir" Margin="-5,0,0,0" Width="150" Height="50" Foreground="Black" BorderBrush="{x:Null}">
+                        <Button.Background>
+                            <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/bar02.png"/>
+                        </Button.Background>
+                    </Button>
+                </Canvas>
+                <Canvas Width="150" Height="50">
+                    <Button Content="任务创建" Name="tastCreate" Command="{Binding ButtonCommand}" CommandParameter="tastCreate" Margin="-5,0,0,0" Width="150" Height="50" Foreground="Black" BorderBrush="{x:Null}">
+                        <Button.Background>
+                            <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/bar03.png"/>
+                        </Button.Background>
+                    </Button>
+                </Canvas>
+                <Canvas Width="150" Height="50">
+                    <Button Content="任务管理" Name="taskManager" Command="{Binding ButtonCommand}" CommandParameter="taskManager" Margin="-5,0,0,0" Width="150" Height="50" Foreground="#FF020000" BorderBrush="{x:Null}">
+                        <Button.Background>
+                            <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/bar03.png"/>
+                        </Button.Background>
+                    </Button>
+                </Canvas>
+                <Canvas Width="150" Height="50">
+                    <Button Content="数据查看" Name="dataQuery" Command="{Binding ButtonCommand}" CommandParameter="dataQuery" Margin="-5,0,0,0" Width="150" Height="50" Foreground="#FFF7F7F7" BorderBrush="{x:Null}">
+                        <Button.Background>
+                            <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/bar08.png"/>
+                        </Button.Background>
+                    </Button>
+                </Canvas>
+                <Canvas Width="150" Height="50">
+                    <Button Content="激活码" Name="codeMagager" Command="{Binding ButtonCommand}" CommandParameter="codeMagager" Margin="-5,0,0,0" Width="150" Height="50" Foreground="#FFF7F7F7" BorderBrush="{x:Null}">
+                        <Button.Background>
+                            <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/bar08.png"/>
+                        </Button.Background>
+                    </Button>
+                </Canvas>
+                <Canvas Width="150" Height="50">
+                    <Button Content="黑名单" Name="blacklist" Command="{Binding ButtonCommand}" CommandParameter="blacklist" Margin="-5,0,0,0" Width="150" Height="50" Foreground="#FFF7F7F7" BorderBrush="{x:Null}">
+                        <Button.Background>
+                            <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/bar08.png"/>
+                        </Button.Background>
+                    </Button>
+                </Canvas>
+                <Canvas Width="150" Height="50">
+                    <Button Content="设置" Name="setup" Command="{Binding ButtonCommand}" CommandParameter="setup" Margin="-5,0,0,0" Width="150" Height="50" Foreground="#FFF7F7F7" BorderBrush="{x:Null}">
+                        <Button.Background>
+                            <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/bar09.png"/>
+                        </Button.Background>
+                    </Button>
+                </Canvas>
+                <Canvas Width="150" Height="50"/>
+            </StackPanel>
+            <Frame DockPanel.Dock="Right" Source="login.xaml" NavigationUIVisibility="Hidden" Grid.Row="1" Margin="0,0,0,0"></Frame>
+        </DockPanel>
+    </Grid>
+</Window>
