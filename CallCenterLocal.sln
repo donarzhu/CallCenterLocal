@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CallCenterLocal", "CallCent
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CallCenterForWpf", "CallCenterForWpf\CallCenterForWpf.csproj", "{4749EA44-CD6D-45FC-BFFF-5DE1C116CCB8}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "CCLSetup", "CCLSetup\CCLSetup.vdproj", "{12515990-A9A2-4333-9F3D-9F442B54BC5C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,12 +20,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
+		x64|Any CPU = x64|Any CPU
+		x64|x64 = x64|x64
+		x64|x86 = x64|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{D6602443-3C5B-4908-846E-CCA8D28A15DE}.Debug|Any CPU.ActiveCfg = Debug|x86
 		{D6602443-3C5B-4908-846E-CCA8D28A15DE}.Debug|Any CPU.Build.0 = Debug|x86
 		{D6602443-3C5B-4908-846E-CCA8D28A15DE}.Debug|x64.ActiveCfg = Debug|x86
-		{D6602443-3C5B-4908-846E-CCA8D28A15DE}.Debug|x64.Build.0 = Debug|x86
 		{D6602443-3C5B-4908-846E-CCA8D28A15DE}.Debug|x86.ActiveCfg = Debug|x86
 		{D6602443-3C5B-4908-846E-CCA8D28A15DE}.Debug|x86.Build.0 = Debug|x86
 		{D6602443-3C5B-4908-846E-CCA8D28A15DE}.DefaultBuild|Any CPU.ActiveCfg = Release|x86
@@ -36,6 +40,12 @@ Global
 		{D6602443-3C5B-4908-846E-CCA8D28A15DE}.Release|x64.ActiveCfg = Release|x86
 		{D6602443-3C5B-4908-846E-CCA8D28A15DE}.Release|x86.ActiveCfg = Release|x86
 		{D6602443-3C5B-4908-846E-CCA8D28A15DE}.Release|x86.Build.0 = Release|x86
+		{D6602443-3C5B-4908-846E-CCA8D28A15DE}.x64|Any CPU.ActiveCfg = Release|x86
+		{D6602443-3C5B-4908-846E-CCA8D28A15DE}.x64|Any CPU.Build.0 = Release|x86
+		{D6602443-3C5B-4908-846E-CCA8D28A15DE}.x64|x64.ActiveCfg = Release|x86
+		{D6602443-3C5B-4908-846E-CCA8D28A15DE}.x64|x64.Build.0 = Release|x86
+		{D6602443-3C5B-4908-846E-CCA8D28A15DE}.x64|x86.ActiveCfg = Release|x86
+		{D6602443-3C5B-4908-846E-CCA8D28A15DE}.x64|x86.Build.0 = Release|x86
 		{4749EA44-CD6D-45FC-BFFF-5DE1C116CCB8}.Debug|Any CPU.ActiveCfg = Debug|x86
 		{4749EA44-CD6D-45FC-BFFF-5DE1C116CCB8}.Debug|x64.ActiveCfg = Debug|x64
 		{4749EA44-CD6D-45FC-BFFF-5DE1C116CCB8}.Debug|x64.Build.0 = Debug|x64
@@ -52,6 +62,25 @@ Global
 		{4749EA44-CD6D-45FC-BFFF-5DE1C116CCB8}.Release|x64.Build.0 = Release|x64
 		{4749EA44-CD6D-45FC-BFFF-5DE1C116CCB8}.Release|x86.ActiveCfg = Release|x86
 		{4749EA44-CD6D-45FC-BFFF-5DE1C116CCB8}.Release|x86.Build.0 = Release|x86
+		{4749EA44-CD6D-45FC-BFFF-5DE1C116CCB8}.x64|Any CPU.ActiveCfg = Release|x64
+		{4749EA44-CD6D-45FC-BFFF-5DE1C116CCB8}.x64|Any CPU.Build.0 = Release|x64
+		{4749EA44-CD6D-45FC-BFFF-5DE1C116CCB8}.x64|x64.ActiveCfg = Release|x64
+		{4749EA44-CD6D-45FC-BFFF-5DE1C116CCB8}.x64|x64.Build.0 = Release|x64
+		{4749EA44-CD6D-45FC-BFFF-5DE1C116CCB8}.x64|x86.ActiveCfg = Release|x86
+		{4749EA44-CD6D-45FC-BFFF-5DE1C116CCB8}.x64|x86.Build.0 = Release|x86
+		{12515990-A9A2-4333-9F3D-9F442B54BC5C}.Debug|Any CPU.ActiveCfg = Debug
+		{12515990-A9A2-4333-9F3D-9F442B54BC5C}.Debug|x64.ActiveCfg = Debug
+		{12515990-A9A2-4333-9F3D-9F442B54BC5C}.Debug|x64.Build.0 = Debug
+		{12515990-A9A2-4333-9F3D-9F442B54BC5C}.Debug|x86.ActiveCfg = Debug
+		{12515990-A9A2-4333-9F3D-9F442B54BC5C}.DefaultBuild|Any CPU.ActiveCfg = Debug
+		{12515990-A9A2-4333-9F3D-9F442B54BC5C}.DefaultBuild|x64.ActiveCfg = Debug
+		{12515990-A9A2-4333-9F3D-9F442B54BC5C}.DefaultBuild|x86.ActiveCfg = Debug
+		{12515990-A9A2-4333-9F3D-9F442B54BC5C}.Release|Any CPU.ActiveCfg = Release
+		{12515990-A9A2-4333-9F3D-9F442B54BC5C}.Release|x64.ActiveCfg = Release
+		{12515990-A9A2-4333-9F3D-9F442B54BC5C}.Release|x86.ActiveCfg = Release
+		{12515990-A9A2-4333-9F3D-9F442B54BC5C}.x64|Any CPU.ActiveCfg = Release
+		{12515990-A9A2-4333-9F3D-9F442B54BC5C}.x64|x64.ActiveCfg = Release
+		{12515990-A9A2-4333-9F3D-9F442B54BC5C}.x64|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

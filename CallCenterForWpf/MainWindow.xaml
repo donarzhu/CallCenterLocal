@@ -77,6 +77,13 @@
                     </Button>
                 </Canvas>
                 <Canvas Width="150" Height="50">
+                    <Button Content="数据统计" Name="statistics" Command="{Binding ButtonCommand}" CommandParameter="statistics" Margin="-5,0,0,0" Width="150" Height="50" Foreground="Black" BorderBrush="{x:Null}" FontWeight="Bold">
+                        <Button.Background>
+                            <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/bar01.png"/>
+                        </Button.Background>
+                    </Button>
+                </Canvas>
+                <Canvas Width="150" Height="50">
                     <Button Content="激活码" Name="codeMagager" Command="{Binding ButtonCommand}" CommandParameter="codeMagager" Margin="-5,0,0,0" Width="150" Height="50" Foreground="Black" BorderBrush="{x:Null}" FontWeight="Bold">
                         <Button.Background>
                             <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/bar01.png"/>

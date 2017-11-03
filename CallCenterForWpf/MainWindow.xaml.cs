@@ -102,6 +102,7 @@ namespace CallCenterForWpf
         public const string activecodeUri = "https://ccc.aicyber.com/static/dist/index.html#/activecode";
         public const string blacklistUri = "https://ccc.aicyber.com/static/dist/index.html#/blacklist";
         public const string settingUri = "https://ccc.aicyber.com/static/dist/index.html#/setting";
+        public const string statisticsUri = "https://ccc.aicyber.com/static/dist/index.html#/statistics";
         public const string TokenKey = "auth_t";
         public const int ThreadSleepTime = 5000;
         public const int waitThreadSleepTime = 500;
@@ -403,6 +404,13 @@ namespace CallCenterForWpf
                             selectBrush,
                             dataQuery,
                             resultUri);
+                    PageInfo statisticsInfo = new PageInfo(
+                            "statistics",
+                            LoadPage,
+                            (ImageBrush)dataQuery.Background,
+                            selectBrush,
+                            statistics,
+                            statisticsUri);
                     PageInfo codeManagerPageInfo = new PageInfo(
                             "codeMagager",
                             LoadPage,
