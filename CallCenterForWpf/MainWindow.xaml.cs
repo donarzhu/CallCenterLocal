@@ -211,9 +211,9 @@ namespace CallCenterForWpf
                             };
                             dlg.ShowDialog();
                             String wId = dlg.SelectWorkflowID;
-                            mCookieManager.SetCookie(Domain, new Cookie()
+                            var ret = mCookieManager.SetCookieAsync("https://"+Domain, new Cookie()
                             {
-                                Domain = Domain,Name= "flow_id",Value=wId
+                                Domain = Domain, Name = "flow_id", Value = wId, Expires = DateTime.MaxValue
                             });
                             break;
                         default:
@@ -438,7 +438,7 @@ namespace CallCenterForWpf
         private void SetPage(Page page)
         {
             this.frame.Content = page;
- 
+
         }
         private void ShowLeftBar()
         {
