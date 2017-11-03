@@ -1,0 +1,48 @@
+﻿<UserControl x:Class="CallCenterForWpf.Control.CorpusEditTitle"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CallCenterForWpf.Control"
+             mc:Ignorable="d" 
+             d:DesignWidth="800" Height="25">
+    <Grid Background="#FFB6C3DA">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="1"/>
+        </Grid.RowDefinitions>
+        <Canvas Background="{Binding ElementName=CorpusItem,Path=LineColor}" Grid.Row="0"  Height="1"/>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1"/>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition Width="1"/>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="1"/>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition Width="1"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="1"/>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition Width="1"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="1"/>
+            </Grid.ColumnDefinitions>
+            <Canvas Background="{Binding ElementName=CorpusItem,Path=LineColor}" Grid.Column="0" Width="1" Margin="0,-1,0,-1"/>
+            <Canvas Background="{Binding ElementName=CorpusItem,Path=LineColor}" Grid.Column="2" Width="1" Margin="0,-1,0,-1"/>
+            <Canvas Background="{Binding ElementName=CorpusItem,Path=LineColor}" Grid.Column="4" Width="1" Margin="0,-1,0,-1"/>
+            <Canvas Background="{Binding ElementName=CorpusItem,Path=LineColor}" Grid.Column="6" Width="1" Margin="0,-1,0,-1"/>
+            <Canvas Background="{Binding ElementName=CorpusItem,Path=LineColor}" Grid.Column="8" Width="1" Margin="0,-1,0,-1"/>
+            <Canvas Background="{Binding ElementName=CorpusItem,Path=LineColor}" Grid.Column="10" Width="1" Margin="0,-1,0,-1"/>
+            <Canvas Background="{Binding ElementName=CorpusItem,Path=LineColor}" Grid.Column="12" Width="1" Margin="0,-1,0,-1"/>
+            <TextBlock Text="用户" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold"/>
+            <TextBlock Text="输入" Grid.Column="3" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold"/>
+            <TextBlock Text="机器人" Grid.Column="5" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold"/>
+            <TextBlock Text="输出" Grid.Column="7" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold"/>
+            <TextBlock Text="回放" Grid.Column="9" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold"/>
+            <TextBlock Text="操作" Grid.Column="11" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold"/>
+        </Grid>
+        <Canvas Background="{Binding ElementName=CorpusItem,Path=LineColor}" Grid.Row="2"  Height="1"/>
+    </Grid>
+</UserControl>

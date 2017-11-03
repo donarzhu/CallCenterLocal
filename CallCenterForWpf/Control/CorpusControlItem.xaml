@@ -1,0 +1,70 @@
+﻿<UserControl x:Class="CallCenterForWpf.Control.CorpusControlItem"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CallCenterForWpf.Control"
+             mc:Ignorable="d" 
+             d:DesignWidth="800" Name="CorpusItem">
+    <Grid Name="main" Background="White" Height="25">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="1"/>
+            </Grid.RowDefinitions>
+            <Canvas Background="{Binding ElementName=CorpusItem,Path=LineColor}" Grid.Row="0"  Height="1"/>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1"/>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="1"/>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="1"/>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="1"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="1"/>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="1"/>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="1"/>
+                </Grid.ColumnDefinitions>
+                <Canvas Background="{Binding ElementName=CorpusItem,Path=LineColor}" Grid.Column="0" Width="1" Margin="0,-1,0,-1"/>
+                <Canvas Background="{Binding ElementName=CorpusItem,Path=LineColor}" Grid.Column="2" Width="1" Margin="0,-1,0,-1"/>
+                <Canvas Background="{Binding ElementName=CorpusItem,Path=LineColor}" Grid.Column="4" Width="1" Margin="0,-1,0,-1"/>
+                <Canvas Background="{Binding ElementName=CorpusItem,Path=LineColor}" Grid.Column="6" Width="1" Margin="0,-1,0,-1"/>
+                <Canvas Background="{Binding ElementName=CorpusItem,Path=LineColor}" Grid.Column="8" Width="1" Margin="0,-1,0,-1"/>
+                <Canvas Background="{Binding ElementName=CorpusItem,Path=LineColor}" Grid.Column="10" Width="1" Margin="0,-1,0,-1"/>
+                <Canvas Background="{Binding ElementName=CorpusItem,Path=LineColor}" Grid.Column="12" Width="1" Margin="0,-1,0,-1"/>
+                <TextBlock Grid.Column="1" Text="用户" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <TextBlock Grid.Column="3" Name="inputText"  Text="你好" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <TextBlock Grid.Column="5" Text="机器人" VerticalAlignment="Center" HorizontalAlignment="Center">
+                </TextBlock>
+                <StackPanel Grid.Column="7" Orientation="Horizontal" Name="outTextControl" HorizontalAlignment="Center" VerticalAlignment="Center">
+                    
+                </StackPanel>
+                <TextBlock Grid.Column="9" Text="录音" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                <WrapPanel Grid.Column="11" ItemHeight="20" ItemWidth="30" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <Button Name="recordButton" Margin="5,0,5,0" ToolTip="录音" BorderBrush="{x:Null}" Click="recordButton_Click">
+                        <Button.Background>
+                            <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/voice_list.png"/>
+                        </Button.Background>
+                    </Button>
+                    <Button Name="PlayVoice" Margin="5,0,5,0" ToolTip="播放" BorderBrush="{x:Null}" Click="PlayVoice_Click">
+                        <Button.Background>
+                            <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/play.png"/>
+                        </Button.Background>
+                    </Button>
+                    <Button Name="upload" Margin="5,0,5,0" ToolTip="上传" BorderBrush="{x:Null}" Click="upload_Click">
+                        <Button.Background>
+                            <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/upload.png"/>
+                        </Button.Background>
+                    </Button>
+                </WrapPanel>
+            </Grid>
+            <Canvas Background="{Binding ElementName=CorpusItem,Path=LineColor}" Grid.Row="2"  Height="1"/>
+        </Grid>
+   
+    </Grid>
+</UserControl>

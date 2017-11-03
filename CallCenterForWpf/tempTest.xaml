@@ -1,0 +1,19 @@
+﻿<Window x:Class="CallCenterForWpf.tempTest"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CallCenterForWpf"
+        xmlns:control="clr-namespace:CallCenterForWpf.Control"
+        mc:Ignorable="d"
+        Title="tempTest" Height="600" Width="800">
+    <Grid>
+        <StackPanel Orientation="Vertical" Margin="30,50,30,30">
+            <control:CorpusEditTitle Height="25"></control:CorpusEditTitle>
+            <control:CorpusControlItem  Height="25"></control:CorpusControlItem>
+            <control:CorpusControlItem  Height="25"></control:CorpusControlItem>
+            <control:CorpusControlItem  Height="25"></control:CorpusControlItem>
+            <control:CorpusControlItem  Height="25"></control:CorpusControlItem>
+        </StackPanel>
+    </Grid>
+</Window>

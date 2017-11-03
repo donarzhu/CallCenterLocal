@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -17,16 +16,19 @@ using System.Windows.Shapes;
 namespace CallCenterForWpf
 {
     /// <summary>
-    /// login.xaml 的交互逻辑
+    /// LoadPage.xaml 的交互逻辑
     /// </summary>
-    public partial class login : Page
+    public partial class LoadPage : Page
     {
-        public login()
+        public String Uri
+        {
+            set { Browser.Address = value; }
+            get { return Browser.Address; }
+        }
+
+        public LoadPage()
         {
             InitializeComponent();
-
-            Browser.FrameLoadEnd += MainWindow.main.Browser_FrameLoadEnd;
         }
     }
-
 }

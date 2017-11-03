@@ -25,7 +25,7 @@ namespace CallCenterLocal
     public partial class Form1 : Form
     {
         public const string server = "http://114.215.68.77:8000";
-        public const string URL = "https://webcamtoy.com";//"https://114.215.68.77/static/record.html";//"http://114.215.68.77:8000/static/dist/index.html";
+        public const string URL = "https://ccc.aicyber.com/static/dist/index.html";//"https://webcamtoy.com";//"https://114.215.68.77/static/record.html";//"http://114.215.68.77:8000/static/dist/index.html";
         const int topSpan = 60;
         public const int ThreadSleepTime = 2000;
         public const int ThreadShortSleep = 500;
@@ -107,6 +107,8 @@ namespace CallCenterLocal
             //注册获取cookie回调事件
             CookieVisitor visitor = new CookieVisitor();
             visitor.SendCookie += (Cookie obj) => {
+                if (obj.Name != "auth_t")
+                    return;
                 Token.token = obj.Value;
                 //mIsEndCheck = true;
                 if (!String.IsNullOrEmpty(Token.token))
@@ -226,7 +228,7 @@ namespace CallCenterLocal
         public event Action<CefSharp.Cookie> SendCookie;
         public bool Visit(CefSharp.Cookie cookie, int count, int total, ref bool deleteCookie)
         {
-            deleteCookie = true;
+            deleteCookie = false;
             if (SendCookie != null)
             {
                 SendCookie(cookie);

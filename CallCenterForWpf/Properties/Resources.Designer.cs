@@ -63,6 +63,16 @@ namespace CallCenterForWpf.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        public static System.Drawing.Bitmap _return {
+            get {
+                object obj = ResourceManager.GetObject("_return", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         public static System.Drawing.Bitmap bar01 {
             get {
                 object obj = ResourceManager.GetObject("bar01", resourceCulture);
@@ -376,6 +386,66 @@ namespace CallCenterForWpf.Properties {
         public static System.Drawing.Bitmap page_bg {
             get {
                 object obj = ResourceManager.GetObject("page_bg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        public static System.Drawing.Bitmap play {
+            get {
+                object obj = ResourceManager.GetObject("play", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        public static System.Drawing.Bitmap replay {
+            get {
+                object obj = ResourceManager.GetObject("replay", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        public static System.Drawing.Bitmap stop {
+            get {
+                object obj = ResourceManager.GetObject("stop", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        public static System.Drawing.Bitmap upload {
+            get {
+                object obj = ResourceManager.GetObject("upload", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        public static System.Drawing.Bitmap voice_list {
+            get {
+                object obj = ResourceManager.GetObject("voice_list", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        public static System.Drawing.Bitmap waiting {
+            get {
+                object obj = ResourceManager.GetObject("waiting", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

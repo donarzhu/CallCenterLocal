@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="CallCenterForWpf.Control.Editex"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:CallCenterForWpf.Control"
+             mc:Ignorable="d" 
+             d:DesignHeight="25" Background="White">
+    <Grid>
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Name="SourceText" Text="可编辑内容"  Background="White" Foreground="Blue" Cursor="Hand" TextDecorations="Underline" VerticalAlignment="Center" MouseLeftButtonDown="SourceText_MouseLeftButtonDown"/>
+            <Grid Name="EditGroup" Visibility="Visible" Width="100">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="30"/>
+                </Grid.ColumnDefinitions>
+                <TextBox Name="EditText" Background="White" Text="可编辑内容" TextAlignment="Center" VerticalContentAlignment="Center" Grid.Column="0" Margin="0,0,0,0" KeyDown="EditText_KeyDown"/>
+                <Button Name="OKButton" Grid.Column="1" Content="确定" Foreground="White" Click="OKButton_Click" >
+                    <Button.Background>
+                        <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/btn-1.png"/>
+                    </Button.Background>
+                </Button>
+            </Grid>
+
+        </StackPanel>
+    </Grid>
+</UserControl>

@@ -1,0 +1,103 @@
+﻿<Page x:Class="CallCenterForWpf.TestPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:CallCenterForWpf"
+      mc:Ignorable="d" 
+      d:DesignHeight="700"
+      Title="TestPage" Width="1200">
+    <Page.Resources>
+
+    </Page.Resources>
+    <Grid Margin="0,0,0,0" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="200"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Background="White">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Orientation="Vertical">
+                <StackPanel Margin="30,20,30,10">
+                    <TextBlock Margin="10,10,10,10" TextWrapping="Wrap" 
+                               Text="1.首先将要测试的电话流程的录音文件下载到本地默认位置，然后拨打电话时就能够获取到录音文件了。" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Button Name="DownloadButton" Width="100" Height="30" Background="White" Content="流程语音下载" Margin="40,0,0,0" Click="DownloadButton_Click" />
+                </StackPanel>
+            </StackPanel>
+            <StackPanel Grid.Column="1" Orientation="Vertical" DockPanel.Dock="Top">
+                <StackPanel Margin="30,20,30,10">
+                    <TextBlock Margin="5,10,10,10" TextWrapping="Wrap" 
+                               Text="2.选择已经下载好录音文件的流程，然后输入能够接听电话的电话号码，点击拨打就可以测试流程语料了。" />
+                </StackPanel>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="120"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="选择流程"  Margin="30,0,20,0" Grid.Column="0"/>
+                    <ComboBox Name="WorkflowCombo" IsReadOnly="True" Margin="0,0,30,0" Grid.Column="1" Background="White"/>
+                </Grid>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="120"/>
+                        <ColumnDefinition Width="9*"/>
+                        <ColumnDefinition Width="26*"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Content="输入电话"  Margin="30,20,20,0" Grid.Column="0"/>
+                    <TextBox Name="PhoneEdit" PreviewTextInput="PhoneEdit_PreviewTextInput"  InputMethod.IsInputMethodEnabled="False" Margin="0,20,30,0" Grid.Column="1" Background="White" Grid.ColumnSpan="2"/>
+                </Grid>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <DockPanel Height="50" Grid.Column="0" >
+                        <Canvas DockPanel.Dock="Right"/>
+                    </DockPanel>
+                    <DockPanel Height="50" Grid.Column="1" >
+                        <Button Name="TestButton" Width="100" DockPanel.Dock="Right" Height="30" Background="White" Content="开始拨打" Margin="0,0,30,0" Click="TestButton_Click"/>
+                        <Canvas DockPanel.Dock="Left"/>
+                    </DockPanel>
+                </Grid>
+                <StackPanel Margin="10,10,10,10">
+
+                </StackPanel>
+            </StackPanel>
+
+        </Grid>
+ 
+  
+        <DockPanel  Grid.Row="1" Background="White">
+            <Border BorderBrush="Gray"  BorderThickness="1,1,1,1" CornerRadius="3" Margin="30,20,30,10">
+                <StackPanel  Background="AliceBlue">
+                    <Label Content="呼叫中心系统介绍"  Margin="5,5,5,5" FontWeight="Bold" FontSize="14"/>
+                    <Canvas Height="1" Background="Gray"/>
+                    <TextBlock Margin="10,10,10,5" TextWrapping="Wrap" Text="外呼机器人变身电话界的&quot;变形金刚&quot;" FontWeight="Bold" />
+                    <TextBlock Margin="10,0,10,5" TextWrapping="Wrap" Text="很多电销企业每天都要面对&quot;大量的无效电话&quot;，&quot;浪费人工成本&quot;的问题，却无从下手，焦头烂额。"/>
+                    <TextBlock Margin="10,0,10,5" TextWrapping="Wrap" Text="而问题还不仅仅如此，长期重复的拨打陌生电话，员工易生厌倦，同样影响电话效果。"/>
+                    <TextBlock Margin="10,0,10,5" TextWrapping="Wrap" Text="更不可避免的落入了&quot;人工外呼水平参差不齐&quot;和&quot;坐席手动记录有效电话流程繁琐&quot;等问题之中；最终，导致工作效率低下，甚至是无成效，为企业带来巨大的损失。"/>
+                    <TextBlock Margin="10,0,10,5" TextWrapping="Wrap" Text="就在此时，电话界的&quot;变形金刚&quot;外呼机器人——阿特，应时而生。"/>
+                    <TextBlock Margin="10,0,10,5" TextWrapping="Wrap" Text="机器人营销，节省90%的人工成本" FontWeight="Bold"/>
+                    <TextBlock Margin="10,0,10,5" TextWrapping="Wrap" Text="阿特是一款可以主动外呼的电话机器人，可以自然人声应答，并与用户进行多轮语音交流，主动向客户介绍产品，代替人工坐席，成功完成外呼工作，成为外呼行业新风向。"/>
+                    <TextBlock Margin="10,0,10,5" TextWrapping="Wrap" Text="在标准话术的支持下，电话机器人不会受情绪影响，能够准确的理解用户的回答及聊天意图，达到人与人之间无障碍畅快交流，针对不同的场景进行批量合规化语音外呼操作，成功解决了语音外呼中的质量保证及效率提升的问题，大大降低了人工通话中的诸多不可控因素，保证了每一次通话都是最佳状态，每一次交流都是完美体验。"/>
+                    <TextBlock Margin="10,0,10,5" TextWrapping="Wrap" Text="不仅如此，电话机器人在每次通话后，会主动给意向客户发送短信。做到通话中主动邀约；通话后二次维护，将人工智能与人工客服之间的业务无缝衔接，掀起人工智能界的巨大变革。"/>
+                    <TextBlock Margin="10,0,10,5" TextWrapping="Wrap" Text="足不出户，精准调研" FontWeight="Bold"/>
+                    <TextBlock Margin="10,0,10,5" TextWrapping="Wrap" Text="用户数据深度统计分析，在保证语义识别通畅的情况下，程序可自动从问答中准确提取标签，为企业精准定位意向对象。"/>
+                    <TextBlock Margin="10,0,10,5" TextWrapping="Wrap" Text="拿地产行业所使用的外呼机器人作为样例："/>
+                    <TextBlock Margin="10,0,10,5" TextWrapping="Wrap" Text="机器人可以搜集、记录被呼客户的购房意向、资金分配、选择喜好等大量重要信息，地产企业可从中讯速筛选出有意向客户等所需内容，从而开展精准地产信息推广营销。为您带来&quot;足不出户做市场调研&quot;的便捷体验，省时省力，一眼明了。"/>
+                    <TextBlock Margin="10,0,10,5" TextWrapping="Wrap" Text="阿特适用客户大起底" FontWeight="Bold"/>
+                    <TextBlock Margin="10,0,10,5" TextWrapping="Wrap" Text="电话机器人在地产推广、保险核保、金融催缴、教育办学、餐饮服务等领域都发挥了巨大的作用。"/>
+                    <TextBlock Margin="10,0,10,5" TextWrapping="Wrap" Text="产品宗旨" FontWeight="Bold"/>
+                    <TextBlock Margin="10,0,10,5" TextWrapping="Wrap" Text="我们的目标：为企业解放人力物力，开展外呼工作随时随地。可以说，阿特在手，智能外乎、市场调研一并拥有。"/>
+                    <TextBlock Margin="10,0,10,5" TextWrapping="Wrap" Text="阿特将成为您工作上的得力助手。"/>
+                </StackPanel>
+            </Border>
+        </DockPanel>
+    </Grid>
+</Page>

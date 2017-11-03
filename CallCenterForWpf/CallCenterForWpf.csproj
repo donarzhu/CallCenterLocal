@@ -84,9 +84,16 @@
     <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\CommonServiceLocator.1.2\lib\portable-windows8+net40+sl5+windowsphone8\Microsoft.Practices.ServiceLocation.dll</HintPath>
     </Reference>
+    <Reference Include="NAudio, Version=1.8.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.1.8.3\lib\net35\NAudio.dll</HintPath>
+    </Reference>
+    <Reference Include="phoneDll">
+      <HintPath>..\..\..\Lib\work\phoneDll.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Interactivity">
       <HintPath>..\packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\System.Windows.Interactivity.dll</HintPath>
@@ -110,7 +117,31 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="Control\CorpusControlItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\CorpusEditTitle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Control\Editex.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LoadPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="tempTest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TestPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -122,8 +153,51 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Control\AudioControl.cs" />
+    <Compile Include="Control\CorpusControlItem.xaml.cs">
+      <DependentUpon>CorpusControlItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\CorpusEditTitle.xaml.cs">
+      <DependentUpon>CorpusEditTitle.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\CPlayVoicePathManager.cs" />
+    <Compile Include="Control\Editex.xaml.cs">
+      <DependentUpon>Editex.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Control\HttpControl.cs" />
+    <Compile Include="Control\HttpManager.cs" />
+    <Compile Include="Control\PageCommon.cs" />
+    <Compile Include="Control\PhoneLib.cs" />
+    <Compile Include="Control\ZipHelper.cs" />
+    <Compile Include="Data\CorpusInfo.cs" />
+    <Compile Include="Data\DialPhoneInfo.cs" />
+    <Compile Include="Data\ResultFtpInfo.cs" />
+    <Compile Include="Data\ResultWorkflows.cs" />
+    <Compile Include="Data\TestWorkflow.cs" />
+    <Compile Include="Data\Token.cs" />
+    <Compile Include="DownloadVoiceDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DownloadVoiceDialog.Designer.cs">
+      <DependentUpon>DownloadVoiceDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmWaitingBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmWaitingBox.Designer.cs">
+      <DependentUpon>frmWaitingBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LoadPage.xaml.cs">
+      <DependentUpon>LoadPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="login.xaml.cs">
       <DependentUpon>login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="tempTest.xaml.cs">
+      <DependentUpon>tempTest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TestPage.xaml.cs">
+      <DependentUpon>TestPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -144,6 +218,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="DownloadVoiceDialog.resx">
+      <DependentUpon>DownloadVoiceDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmWaitingBox.resx">
+      <DependentUpon>frmWaitingBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -255,6 +335,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\upload.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\play.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\replay.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\voice_list.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\cef.redist.x86.3.2987.1601\build\cef.redist.x86.targets" Condition="Exists('..\packages\cef.redist.x86.3.2987.1601\build\cef.redist.x86.targets')" />

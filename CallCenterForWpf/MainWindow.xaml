@@ -30,69 +30,83 @@
                 </Canvas>
 
             </DockPanel>
-            <StackPanel Orientation="Vertical" DockPanel.Dock="Left" Width="150" MouseLeftButtonDown="StackPanel_MouseLeftButtonDown">
+            <StackPanel Name="LeftBar" Orientation="Vertical" DockPanel.Dock="Left" Width="0" MouseLeftButtonDown="StackPanel_MouseLeftButtonDown" Visibility="Hidden">
                 <StackPanel.Background>
                     <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/page-bg.jpg"/>
                 </StackPanel.Background>
                 <Canvas Width="150" Height="50">
-                    <Button Content="外呼测试" Name="testPage" Command="{Binding ButtonCommand}" CommandParameter="testPage" Margin="-5,0,0,0" Width="150" Height="50" Foreground="#FFF7F7F7" BorderBrush="{x:Null}">
+                    <Button Content="外呼测试" Name="testPage" Command="{Binding ButtonCommand}" CommandParameter="testPage" Margin="-5,0,0,0" Width="150" Height="50" Foreground="Black"  BorderBrush="{x:Null}" FontWeight="Bold">
                         <Button.Background>
-                            <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/bar06.png"/>
+                            <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/bar01.png"/>
                         </Button.Background>
                     </Button>
                 </Canvas>
                 <Canvas Width="150" Height="50">
-                    <Button Content="知识库" Name="dataDir" Command="{Binding ButtonCommand}" CommandParameter="dataDir" Margin="-5,0,0,0" Width="150" Height="50" Foreground="Black" BorderBrush="{x:Null}">
+                    <Button Content="知识库" Name="workflowEdit" Command="{Binding ButtonCommand}" CommandParameter="workflowEdit" Margin="-5,0,0,0" Width="150" Height="50" Foreground="Black" BorderBrush="{x:Null}" FontWeight="Bold">
                         <Button.Background>
-                            <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/bar02.png"/>
+                            <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/bar01.png"/>
                         </Button.Background>
                     </Button>
                 </Canvas>
                 <Canvas Width="150" Height="50">
-                    <Button Content="任务创建" Name="tastCreate" Command="{Binding ButtonCommand}" CommandParameter="tastCreate" Margin="-5,0,0,0" Width="150" Height="50" Foreground="Black" BorderBrush="{x:Null}">
+                    <Button Content="任务创建" Name="taskCreate" Command="{Binding ButtonCommand}" CommandParameter="taskCreate" Margin="-5,0,0,0" Width="150" Height="50" Foreground="Black" BorderBrush="{x:Null}" FontWeight="Bold">
                         <Button.Background>
-                            <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/bar03.png"/>
+                            <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/bar01.png"/>
                         </Button.Background>
                     </Button>
                 </Canvas>
                 <Canvas Width="150" Height="50">
-                    <Button Content="任务管理" Name="taskManager" Command="{Binding ButtonCommand}" CommandParameter="taskManager" Margin="-5,0,0,0" Width="150" Height="50" Foreground="#FF020000" BorderBrush="{x:Null}">
+                    <Button Content="任务管理" Name="taskManager" Command="{Binding ButtonCommand}" CommandParameter="taskManager" Margin="-5,0,0,0" Width="150" Height="50" Foreground="Black" BorderBrush="{x:Null}" FontWeight="Bold">
                         <Button.Background>
-                            <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/bar03.png"/>
+                            <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/bar01.png"/>
                         </Button.Background>
                     </Button>
                 </Canvas>
                 <Canvas Width="150" Height="50">
-                    <Button Content="数据查看" Name="dataQuery" Command="{Binding ButtonCommand}" CommandParameter="dataQuery" Margin="-5,0,0,0" Width="150" Height="50" Foreground="#FFF7F7F7" BorderBrush="{x:Null}">
+                    <Button Content="语音录制" Name="voiceRecord" Command="{Binding ButtonCommand}" CommandParameter="voiceRecord" Margin="-5,0,0,0" Width="150" Height="50" Foreground="Black" BorderBrush="{x:Null}" FontWeight="Bold">
                         <Button.Background>
-                            <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/bar08.png"/>
+                            <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/bar01.png"/>
                         </Button.Background>
                     </Button>
                 </Canvas>
                 <Canvas Width="150" Height="50">
-                    <Button Content="激活码" Name="codeMagager" Command="{Binding ButtonCommand}" CommandParameter="codeMagager" Margin="-5,0,0,0" Width="150" Height="50" Foreground="#FFF7F7F7" BorderBrush="{x:Null}">
+                    <Button Content="数据查看" Name="dataQuery" Command="{Binding ButtonCommand}" CommandParameter="dataQuery" Margin="-5,0,0,0" Width="150" Height="50" Foreground="Black" BorderBrush="{x:Null}" FontWeight="Bold">
                         <Button.Background>
-                            <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/bar08.png"/>
+                            <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/bar01.png"/>
                         </Button.Background>
                     </Button>
                 </Canvas>
                 <Canvas Width="150" Height="50">
-                    <Button Content="黑名单" Name="blacklist" Command="{Binding ButtonCommand}" CommandParameter="blacklist" Margin="-5,0,0,0" Width="150" Height="50" Foreground="#FFF7F7F7" BorderBrush="{x:Null}">
+                    <Button Content="数据统计" Name="dataCount" Command="{Binding ButtonCommand}" CommandParameter="dataCount" Margin="-5,0,0,0" Width="150" Height="50" Foreground="Black" BorderBrush="{x:Null}" FontWeight="Bold">
                         <Button.Background>
-                            <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/bar08.png"/>
+                            <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/bar01.png"/>
                         </Button.Background>
                     </Button>
                 </Canvas>
                 <Canvas Width="150" Height="50">
-                    <Button Content="设置" Name="setup" Command="{Binding ButtonCommand}" CommandParameter="setup" Margin="-5,0,0,0" Width="150" Height="50" Foreground="#FFF7F7F7" BorderBrush="{x:Null}">
+                    <Button Content="激活码" Name="codeMagager" Command="{Binding ButtonCommand}" CommandParameter="codeMagager" Margin="-5,0,0,0" Width="150" Height="50" Foreground="Black" BorderBrush="{x:Null}" FontWeight="Bold">
                         <Button.Background>
-                            <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/bar09.png"/>
+                            <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/bar01.png"/>
+                        </Button.Background>
+                    </Button>
+                </Canvas>
+                <Canvas Width="150" Height="50">
+                    <Button Content="黑名单" Name="blacklist" Command="{Binding ButtonCommand}" CommandParameter="blacklist" Margin="-5,0,0,0" Width="150" Height="50" Foreground="Black" BorderBrush="{x:Null}" FontWeight="Bold">
+                        <Button.Background>
+                            <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/bar01.png"/>
+                        </Button.Background>
+                    </Button>
+                </Canvas>
+                <Canvas Width="150" Height="50">
+                    <Button Content="设置" Name="setup" Command="{Binding ButtonCommand}" CommandParameter="setup" Margin="-5,0,0,0" Width="150" Height="50" Foreground="Black" BorderBrush="{x:Null}" FontWeight="Bold">
+                        <Button.Background>
+                            <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/bar01.png"/>
                         </Button.Background>
                     </Button>
                 </Canvas>
                 <Canvas Width="150" Height="50"/>
             </StackPanel>
-            <Frame DockPanel.Dock="Right" Source="login.xaml" NavigationUIVisibility="Hidden" Grid.Row="1" Margin="0,0,0,0"></Frame>
+            <Frame Name="frame" DockPanel.Dock="Right" Source="login.xaml" NavigationUIVisibility="Hidden" Grid.Row="1" Margin="0,0,0,0"></Frame>
         </DockPanel>
     </Grid>
 </Window>
