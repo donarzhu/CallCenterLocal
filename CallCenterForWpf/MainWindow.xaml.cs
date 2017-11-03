@@ -94,7 +94,14 @@ namespace CallCenterForWpf
             }
         }
 
-        public const string loginPageUrl = "https://ccc.aicyber.com/static/dist/index.html";
+        public const string loginPageUri = "https://ccc.aicyber.com/static/dist/index.html#";
+        public const string repositoryUri = "https://ccc.aicyber.com/static/dist/index.html#/repository";
+        public const string taskcreateUri = "https://ccc.aicyber.com/static/dist/index.html#/taskcreate";
+        public const string taskeditUri = "https://ccc.aicyber.com/static/dist/index.html#/taskedit";
+        public const string resultUri = "https://ccc.aicyber.com/static/dist/index.html#/home/result";
+        public const string activecodeUri = "https://ccc.aicyber.com/static/dist/index.html#/activecode";
+        public const string blacklistUri = "https://ccc.aicyber.com/static/dist/index.html#/blacklist";
+        public const string settingUri = "https://ccc.aicyber.com/static/dist/index.html#/setting";
         public const string TokenKey = "auth_t";
         public const int ThreadSleepTime = 5000;
         public const int waitThreadSleepTime = 500;
@@ -273,7 +280,7 @@ namespace CallCenterForWpf
             });
             string _url = e.Url;
             //判断是否是需要获取cookie的页面
-            if (_url.Contains(loginPageUrl))
+            if (_url.Contains(loginPageUri))
             {
                 Thread checkThread = new Thread(() =>
                 {
@@ -367,63 +374,56 @@ namespace CallCenterForWpf
                             (ImageBrush)workflowEdit.Background,
                             selectBrush,
                             workflowEdit,
-                            loginPageUrl);
+                            repositoryUri);
                     PageInfo taskCreatePageInfo = new PageInfo(
                             "taskCreate",
                             LoadPage,
                             (ImageBrush)taskCreate.Background,
                             selectBrush,
                             taskCreate,
-                            loginPageUrl);
+                            taskcreateUri);
                     PageInfo taskManagerPage = new PageInfo(
                             "taskManager",
                             LoadPage,
                             (ImageBrush)taskManager.Background,
                             selectBrush,
                             taskManager,
-                            loginPageUrl);
+                            taskeditUri);
                     PageInfo vioceRecordPage = new PageInfo(
                             "voiceRecord",
                             LoadPage,
                             (ImageBrush)taskManager.Background,
                             selectBrush,
                             voiceRecord,
-                            loginPageUrl);
+                            loginPageUri);
                     PageInfo dataQueryPageInfo = new PageInfo(
                             "dataQuery",
                             LoadPage,
                             (ImageBrush)dataQuery.Background,
                             selectBrush,
                             dataQuery,
-                            loginPageUrl);
-                    PageInfo dataCountPageInfo = new PageInfo(
-                            "dataCount",
-                            LoadPage,
-                            (ImageBrush)dataQuery.Background,
-                            selectBrush,
-                            dataCount,
-                            loginPageUrl);
+                            resultUri);
                     PageInfo codeManagerPageInfo = new PageInfo(
                             "codeMagager",
                             LoadPage,
                             (ImageBrush)codeMagager.Background,
                             selectBrush,
                             codeMagager,
-                            loginPageUrl);
+                            activecodeUri);
                     PageInfo blacklistPageInfo = new PageInfo(
                             "blacklist",
                             LoadPage,
                             (ImageBrush)blacklist.Background,
                             selectBrush,
                             blacklist,
-                            loginPageUrl);
+                            blacklistUri);
                     PageInfo setupPageInfo = new PageInfo(
                             "setup",
                             LoadPage,
                             (ImageBrush)setup.Background,
                             selectBrush,
                             setup,
-                            loginPageUrl);
+                            settingUri);
 
                 }
                 catch (Exception e)

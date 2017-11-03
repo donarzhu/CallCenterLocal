@@ -11,7 +11,7 @@
     <Grid>
         <Border Grid.Row="1" BorderBrush="Gray" BorderThickness="0,1">
             <wpf:ChromiumWebBrowser x:Name="Browser"
-                                    Address="{x:Static local:MainWindow.loginPageUrl }">
+                                    Address="{x:Static local:MainWindow.loginPageUri }">
             </wpf:ChromiumWebBrowser>
 
         </Border>

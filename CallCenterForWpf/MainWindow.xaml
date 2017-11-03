@@ -62,7 +62,7 @@
                         </Button.Background>
                     </Button>
                 </Canvas>
-                <Canvas Width="150" Height="50">
+                <Canvas Width="150" Height="0" Visibility="Hidden">
                     <Button Content="语音录制" Name="voiceRecord" Command="{Binding ButtonCommand}" CommandParameter="voiceRecord" Margin="-5,0,0,0" Width="150" Height="50" Foreground="Black" BorderBrush="{x:Null}" FontWeight="Bold">
                         <Button.Background>
                             <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/bar01.png"/>
@@ -71,13 +71,6 @@
                 </Canvas>
                 <Canvas Width="150" Height="50">
                     <Button Content="数据查看" Name="dataQuery" Command="{Binding ButtonCommand}" CommandParameter="dataQuery" Margin="-5,0,0,0" Width="150" Height="50" Foreground="Black" BorderBrush="{x:Null}" FontWeight="Bold">
-                        <Button.Background>
-                            <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/bar01.png"/>
-                        </Button.Background>
-                    </Button>
-                </Canvas>
-                <Canvas Width="150" Height="50">
-                    <Button Content="数据统计" Name="dataCount" Command="{Binding ButtonCommand}" CommandParameter="dataCount" Margin="-5,0,0,0" Width="150" Height="50" Foreground="Black" BorderBrush="{x:Null}" FontWeight="Bold">
                         <Button.Background>
                             <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/bar01.png"/>
                         </Button.Background>
