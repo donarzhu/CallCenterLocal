@@ -163,18 +163,18 @@ namespace CallCenterForWpf
                 frame.CommandBindings.Add(new CommandBinding(NavigationCommands.BrowseBack, OnBrowseBack));
                 frame.KeyDown += Frame_KeyDown;
                 Browser.DownloadHandler = new DownloadHandler();
+                Browser.FrameLoadEnd += Browser_FrameLoadEnd;
 
                 loginPage = new login();
                 PageInfo loginPafge = new PageInfo(
                         loginCmd,
-                        loginPage,
+                        null,//loginPage,
                         null,
                         null,
                         null,
                         loginPageUri);
                 PageInfo.CurrentCommand = loginCmd;
                 SetPage(PageInfo.CurrentPage);
-                Browser.FrameLoadEnd += Browser_FrameLoadEnd;
             }
             catch(Exception e)
             {
@@ -576,20 +576,33 @@ namespace CallCenterForWpf
         {
             ClearCookie();
             HideLeftBar();
-            PageInfo.RemoveCommad(loginCmd);
-            loginPage = new login();
-            PageInfo loginPafge = new PageInfo(
-                    loginCmd,
-                    loginPage,
-                    null,
-                    null,
-                    null,
-                    loginPageUri);
-            userName.Text = "";
+            foreach(UIElement obj in mainPanel.Children)
+            {
+                if(obj is CefSharp.Wpf.ChromiumWebBrowser)
+                {
+                    mainPanel.Children.Remove(obj);
+                    Browser = null;
+                    break;
+                }
+            }
+            Browser = new CefSharp.Wpf.ChromiumWebBrowser();
+            mainPanel.Children.Add(Browser);
+            Browser.DownloadHandler = new DownloadHandler();
+            Browser.FrameLoadEnd += Browser_FrameLoadEnd;
+
+            //PageInfo.RemoveCommad(loginCmd);
+            //loginPage = new login();
+            //PageInfo loginPafge = new PageInfo(
+            //        loginCmd,
+            //        loginPage,
+            //        null,
+            //        null,
+            //        null,
+            //        loginPageUri);
+            //userName.Text = "";
             quitButton.Visibility = Visibility.Hidden;
             PageInfo.CurrentCommand = loginCmd;
             SetPage(PageInfo.CurrentPage);
-            Browser.FrameLoadEnd += Browser_FrameLoadEnd;
         }
 
     }

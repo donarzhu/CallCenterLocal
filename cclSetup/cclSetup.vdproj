@@ -39,6 +39,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_0729BE6F6A414EA3BBB2689AB98CE53A"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_074EDBDDCE3937312F1D60F64A108D29"
         "OwnerKey" = "8:_15E347A465FD49DFAF1F21ACD9C0E746"
         "MsmSig" = "8:_UNDEFINED"
@@ -47,6 +53,12 @@
         {
         "MsmKey" = "8:_074EDBDDCE3937312F1D60F64A108D29"
         "OwnerKey" = "8:_68CC4C62D74E4B39A3152F800C950A9F"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_0899FCFF3E7B45039645037C1243B5A7"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -159,6 +171,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_210085FF5B9A44F9B6D619EE4065B5E7"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_22786E8238D2497FBD7BCD63578D5E47"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -166,6 +184,12 @@
         "Entry"
         {
         "MsmKey" = "8:_23694D7E43294589A55F0A5005ECA881"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_293FB7C8258D46888E8D94CF127B1078"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -195,7 +219,19 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_2B1716539FAB4775BCD33C1AA3255281"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_2CD79EF1F7E64CCAA4EC9C1E57911F48"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_2ECF11953C0E4105959372B575851C9C"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -209,6 +245,12 @@
         {
         "MsmKey" = "8:_2FEDDE7E73EA2173003F8D30A983D8DB"
         "OwnerKey" = "8:_67247D156C0248C19C06ADB170E06D54"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_31EC4B8F456548FCA779AF45ACCC3EFF"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -249,6 +291,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_375017066B15478095E9AFA9F2D4270D"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_3B58B60BBBF941F89A9A509F8D26252C"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -256,6 +304,18 @@
         "Entry"
         {
         "MsmKey" = "8:_3CF8EC20ED754A459DE39B590076DA18"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_3FA2DC3F94CF4A089F1037077F192D63"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_3FED427E6CC4441381BB921BE1AE873C"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -286,6 +346,12 @@
         "Entry"
         {
         "MsmKey" = "8:_44396B7F73454C3A9679D64236D1E460"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_446CF72D563441999E4F6D3937257FD5"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -423,6 +489,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_5F39C26563734FEA92A3471536108A61"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_609EA343B60141ABA2FE5857F85C5EE3"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -531,6 +603,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_7C12C48A06F446DAB1BE6CACD221B0F2"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_7C65F1360BA74EEF98E7158D9EEE10F9"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -550,6 +628,12 @@
         "Entry"
         {
         "MsmKey" = "8:_80E028393E9E45B7B5D8F4EC7B622730"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_81CA0EE2B4D44906B37BFEB668C9D586"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -592,6 +676,12 @@
         "Entry"
         {
         "MsmKey" = "8:_85B90A1EC8304CB0BD9F570939F157EE"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_87DD1255025E4AE9A85CA8537F8014C6"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -759,6 +849,18 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_ACC528A7587B489AA54221725C3296A4"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_ADCA1EE8694147FBB05E7AF232E3E2BB"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_B009F7A0B5944692A485B7B77ED6A1B3"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -831,6 +933,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_BE05375428F14A7D9A68BD5BBBE1E964"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_BF4C7941912E482FACB92827E04243DA"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -861,13 +969,37 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_C2A6746F71AE4CBBBCB226A04FA94132"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_C41BEB9147614EC9B442BC05C2557B3E"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
+        "MsmKey" = "8:_C6393D20ADD242249A6B42FBAA251DAC"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_C678F215DD724011AA9F612783F62481"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_C7F469D208E242EC8AEA7B0825E00FC7"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_CC5FEF80F1A940B1A477E0E4312E6730"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -899,6 +1031,12 @@
         {
         "MsmKey" = "8:_CF80C8593CA44D9E23EEFF5057CF8E9B"
         "OwnerKey" = "8:_67247D156C0248C19C06ADB170E06D54"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_D0AD31DE9E7C4D30A3CDAD35981A6A9B"
+        "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -940,6 +1078,12 @@
         "Entry"
         {
         "MsmKey" = "8:_D5DAD437224545FB956AF22AD75E376B"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_D706CB6FCE2C421CA18C94D702FFEA10"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -1041,7 +1185,19 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_F1BCD5D0C02D47168729401D48F25B45"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_F24B5927DC104A6BB7413FBD72774475"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_F3DAE925D560414AA6CE0FFFD0356BB1"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -1423,7 +1579,7 @@
             "PromptEnabled" = "11:TRUE"
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
-            "ComponentsUrl" = "8:"
+            "ComponentsUrl" = "8:D:\\Users\\Administrator\\source\\CallCenterLocal\\CallCenterForWpf\\bin\\x86\\Debug\\driver"
                 "Items"
                 {
                     "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.6.1"
@@ -1460,6 +1616,20 @@
     {
         "CustomAction"
         {
+            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_D8AB17809BBF43469230593A29B03E16"
+            {
+            "Name" = "8:installdrv.exe"
+            "Condition" = "8:"
+            "Object" = "8:_0729BE6F6A414EA3BBB2689AB98CE53A"
+            "FileType" = "3:2"
+            "InstallAction" = "3:1"
+            "Arguments" = "8:/Install"
+            "EntryPoint" = "8:"
+            "Sequence" = "3:1"
+            "Identifier" = "8:_C7D7ADDE_DCB4_4D17_8487_1329600637A5"
+            "InstallerClass" = "11:FALSE"
+            "CustomActionData" = "8:"
+            }
         }
         "DefaultFeature"
         {
@@ -1574,6 +1744,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_0729BE6F6A414EA3BBB2689AB98CE53A"
+            {
+            "SourcePath" = "8:..\\CallCenterForWpf\\bin\\x86\\Debug\\driver\\installdrv.exe"
+            "TargetName" = "8:installdrv.exe"
+            "Tag" = "8:"
+            "Folder" = "8:_3D68FA9416EB4385A8633FD627604C16"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_074EDBDDCE3937312F1D60F64A108D29"
             {
             "AssemblyRegister" = "3:1"
@@ -1603,6 +1793,26 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_0899FCFF3E7B45039645037C1243B5A7"
+            {
+            "SourcePath" = "8:..\\CallCenterForWpf\\bin\\x86\\Debug\\driver\\driverfile\\spc\\import.bat"
+            "TargetName" = "8:import.bat"
+            "Tag" = "8:"
+            "Folder" = "8:_2FF311F2C6D04F97B41473EC02D818A6"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_09E6ED9A18C54AB6AF848C84B8C4014C"
@@ -1987,6 +2197,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_210085FF5B9A44F9B6D619EE4065B5E7"
+            {
+            "SourcePath" = "8:..\\CallCenterForWpf\\bin\\x86\\Debug\\driver\\driverfile\\TelMateWDM.sys"
+            "TargetName" = "8:TelMateWDM.sys"
+            "Tag" = "8:"
+            "Folder" = "8:_36B5CBEC06AD4988A3E6747BFB9A42D1"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_22786E8238D2497FBD7BCD63578D5E47"
             {
             "SourcePath" = "8:..\\CallCenterForWpf\\bin\\x86\\Debug\\widevinecdmadapter.dll"
@@ -2013,6 +2243,26 @@
             "TargetName" = "8:ar.pak"
             "Tag" = "8:"
             "Folder" = "8:_E171F1D56B554D73AF97D163EE7E6D8C"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_293FB7C8258D46888E8D94CF127B1078"
+            {
+            "SourcePath" = "8:..\\CallCenterForWpf\\bin\\x86\\Debug\\driver\\driverfile\\icc301i64.cat"
+            "TargetName" = "8:icc301i64.cat"
+            "Tag" = "8:"
+            "Folder" = "8:_36B5CBEC06AD4988A3E6747BFB9A42D1"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -2107,12 +2357,52 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_2B1716539FAB4775BCD33C1AA3255281"
+            {
+            "SourcePath" = "8:..\\CallCenterForWpf\\bin\\x86\\Debug\\driver\\driverfile\\html\\index.html"
+            "TargetName" = "8:index.html"
+            "Tag" = "8:"
+            "Folder" = "8:_F4CB9403228D4E049F3CCBCBB0B131EF"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_2CD79EF1F7E64CCAA4EC9C1E57911F48"
             {
             "SourcePath" = "8:..\\CallCenterForWpf\\bin\\x86\\Debug\\locales\\lt.pak"
             "TargetName" = "8:lt.pak"
             "Tag" = "8:"
             "Folder" = "8:_E171F1D56B554D73AF97D163EE7E6D8C"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_2ECF11953C0E4105959372B575851C9C"
+            {
+            "SourcePath" = "8:..\\CallCenterForWpf\\bin\\x86\\Debug\\driver\\driverfile\\dpinstia64.exe"
+            "TargetName" = "8:dpinstia64.exe"
+            "Tag" = "8:"
+            "Folder" = "8:_36B5CBEC06AD4988A3E6747BFB9A42D1"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -2156,6 +2446,26 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_31EC4B8F456548FCA779AF45ACCC3EFF"
+            {
+            "SourcePath" = "8:..\\CallCenterForWpf\\bin\\x86\\Debug\\driver\\driverfile\\spc\\install.bat"
+            "TargetName" = "8:install.bat"
+            "Tag" = "8:"
+            "Folder" = "8:_2FF311F2C6D04F97B41473EC02D818A6"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_326D93B7EAE64952B594290F5FF26D2B"
@@ -2300,6 +2610,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_375017066B15478095E9AFA9F2D4270D"
+            {
+            "SourcePath" = "8:..\\CallCenterForWpf\\bin\\x86\\Debug\\driver\\virtualaudiodriver\\BriAudrv.dll"
+            "TargetName" = "8:BriAudrv.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_49D0AF78E91642ECAA7CA907368B6A40"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_3B58B60BBBF941F89A9A509F8D26252C"
             {
             "SourcePath" = "8:..\\CallCenterForWpf\\bin\\x86\\Debug\\vad_1.pcm"
@@ -2326,6 +2656,46 @@
             "TargetName" = "8:ta.pak"
             "Tag" = "8:"
             "Folder" = "8:_E171F1D56B554D73AF97D163EE7E6D8C"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_3FA2DC3F94CF4A089F1037077F192D63"
+            {
+            "SourcePath" = "8:..\\CallCenterForWpf\\bin\\x86\\Debug\\driver\\driverfile\\TelmateWDM.INF"
+            "TargetName" = "8:TelmateWDM.INF"
+            "Tag" = "8:"
+            "Folder" = "8:_36B5CBEC06AD4988A3E6747BFB9A42D1"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_3FED427E6CC4441381BB921BE1AE873C"
+            {
+            "SourcePath" = "8:..\\CallCenterForWpf\\bin\\x86\\Debug\\driver\\driverfile\\TelMateW64.SYS"
+            "TargetName" = "8:TelMateW64.SYS"
+            "Tag" = "8:"
+            "Folder" = "8:_36B5CBEC06AD4988A3E6747BFB9A42D1"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -2426,6 +2796,26 @@
             "TargetName" = "8:Microsoft.Practices.ServiceLocation.pdb"
             "Tag" = "8:"
             "Folder" = "8:_A3B7599A31DE40279CF99F5F36692E4C"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_446CF72D563441999E4F6D3937257FD5"
+            {
+            "SourcePath" = "8:..\\CallCenterForWpf\\bin\\x86\\Debug\\driver\\virtualaudiodriver\\TmSetupAuDrv.exe"
+            "TargetName" = "8:TmSetupAuDrv.exe"
+            "Tag" = "8:"
+            "Folder" = "8:_49D0AF78E91642ECAA7CA907368B6A40"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -2801,6 +3191,26 @@
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_A3B7599A31DE40279CF99F5F36692E4C"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_5F39C26563734FEA92A3471536108A61"
+            {
+            "SourcePath" = "8:..\\CallCenterForWpf\\bin\\x86\\Debug\\driver\\driverfile\\spc\\certmgr.exe"
+            "TargetName" = "8:certmgr.exe"
+            "Tag" = "8:"
+            "Folder" = "8:_2FF311F2C6D04F97B41473EC02D818A6"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -3201,6 +3611,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_7C12C48A06F446DAB1BE6CACD221B0F2"
+            {
+            "SourcePath" = "8:..\\CallCenterForWpf\\bin\\x86\\Debug\\driver\\driverfile\\spc\\installex.bat"
+            "TargetName" = "8:installex.bat"
+            "Tag" = "8:"
+            "Folder" = "8:_2FF311F2C6D04F97B41473EC02D818A6"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_7C65F1360BA74EEF98E7158D9EEE10F9"
             {
             "AssemblyRegister" = "3:1"
@@ -3289,6 +3719,26 @@
             "TargetName" = "8:cef_200_percent.pak"
             "Tag" = "8:"
             "Folder" = "8:_A3B7599A31DE40279CF99F5F36692E4C"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_81CA0EE2B4D44906B37BFEB668C9D586"
+            {
+            "SourcePath" = "8:..\\CallCenterForWpf\\bin\\x86\\Debug\\driver\\autosetupdrv.bat"
+            "TargetName" = "8:autosetupdrv.bat"
+            "Tag" = "8:"
+            "Folder" = "8:_3D68FA9416EB4385A8633FD627604C16"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -3431,6 +3881,26 @@
             "TargetName" = "8:en-US.pak"
             "Tag" = "8:"
             "Folder" = "8:_E171F1D56B554D73AF97D163EE7E6D8C"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_87DD1255025E4AE9A85CA8537F8014C6"
+            {
+            "SourcePath" = "8:..\\CallCenterForWpf\\bin\\x86\\Debug\\driver\\driverfile\\dpinstamd64.exe"
+            "TargetName" = "8:dpinstamd64.exe"
+            "Tag" = "8:"
+            "Folder" = "8:_36B5CBEC06AD4988A3E6747BFB9A42D1"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -3969,6 +4439,46 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_ACC528A7587B489AA54221725C3296A4"
+            {
+            "SourcePath" = "8:..\\CallCenterForWpf\\bin\\x86\\Debug\\driver\\driverfile\\spc\\icc301root.cer"
+            "TargetName" = "8:icc301root.cer"
+            "Tag" = "8:"
+            "Folder" = "8:_2FF311F2C6D04F97B41473EC02D818A6"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_ADCA1EE8694147FBB05E7AF232E3E2BB"
+            {
+            "SourcePath" = "8:..\\CallCenterForWpf\\bin\\x86\\Debug\\driver\\driverfile\\icc301x64.cat"
+            "TargetName" = "8:icc301x64.cat"
+            "Tag" = "8:"
+            "Folder" = "8:_36B5CBEC06AD4988A3E6747BFB9A42D1"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_B009F7A0B5944692A485B7B77ED6A1B3"
             {
             "SourcePath" = "8:..\\CallCenterForWpf\\bin\\x86\\Debug\\d3dcompiler_47.dll"
@@ -4191,6 +4701,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_BE05375428F14A7D9A68BD5BBBE1E964"
+            {
+            "SourcePath" = "8:..\\CallCenterForWpf\\bin\\x86\\Debug\\driver\\driverfile\\icc301x86.cat"
+            "TargetName" = "8:icc301x86.cat"
+            "Tag" = "8:"
+            "Folder" = "8:_36B5CBEC06AD4988A3E6747BFB9A42D1"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_BF4C7941912E482FACB92827E04243DA"
             {
             "SourcePath" = "8:..\\CallCenterForWpf\\bin\\x86\\Debug\\Resources\\btn-19.png"
@@ -4293,6 +4823,26 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C2A6746F71AE4CBBBCB226A04FA94132"
+            {
+            "SourcePath" = "8:..\\CallCenterForWpf\\bin\\x86\\Debug\\driver\\driverfile\\spc\\installspc.bat"
+            "TargetName" = "8:installspc.bat"
+            "Tag" = "8:"
+            "Folder" = "8:_2FF311F2C6D04F97B41473EC02D818A6"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C41BEB9147614EC9B442BC05C2557B3E"
             {
             "SourcePath" = "8:..\\CallCenterForWpf\\bin\\x86\\Debug\\locales\\lv.pak"
@@ -4313,12 +4863,72 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C6393D20ADD242249A6B42FBAA251DAC"
+            {
+            "SourcePath" = "8:..\\CallCenterForWpf\\bin\\x86\\Debug\\driver\\driverfile\\spc\\禁用win7 64位数字签名.bat"
+            "TargetName" = "8:禁用win7 64位数字签名.bat"
+            "Tag" = "8:"
+            "Folder" = "8:_2FF311F2C6D04F97B41473EC02D818A6"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C678F215DD724011AA9F612783F62481"
             {
             "SourcePath" = "8:..\\CallCenterForWpf\\bin\\x86\\Debug\\locales\\da.pak"
             "TargetName" = "8:da.pak"
             "Tag" = "8:"
             "Folder" = "8:_E171F1D56B554D73AF97D163EE7E6D8C"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C7F469D208E242EC8AEA7B0825E00FC7"
+            {
+            "SourcePath" = "8:..\\CallCenterForWpf\\bin\\x86\\Debug\\driver\\driverfile\\dpinstx86.exe"
+            "TargetName" = "8:dpinstx86.exe"
+            "Tag" = "8:"
+            "Folder" = "8:_36B5CBEC06AD4988A3E6747BFB9A42D1"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_CC5FEF80F1A940B1A477E0E4312E6730"
+            {
+            "SourcePath" = "8:..\\CallCenterForWpf\\bin\\x86\\Debug\\driver\\virtualaudiodriver\\说明.txt"
+            "TargetName" = "8:说明.txt"
+            "Tag" = "8:"
+            "Folder" = "8:_49D0AF78E91642ECAA7CA907368B6A40"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -4433,6 +5043,26 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D0AD31DE9E7C4D30A3CDAD35981A6A9B"
+            {
+            "SourcePath" = "8:..\\CallCenterForWpf\\bin\\x86\\Debug\\driver\\driverfile\\html\\loading.gif"
+            "TargetName" = "8:loading.gif"
+            "Tag" = "8:"
+            "Folder" = "8:_F4CB9403228D4E049F3CCBCBB0B131EF"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_D1FEAED144AE4FF9CC45F06A77973F16"
@@ -4563,6 +5193,26 @@
             "TargetName" = "8:pt-PT.pak"
             "Tag" = "8:"
             "Folder" = "8:_E171F1D56B554D73AF97D163EE7E6D8C"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_D706CB6FCE2C421CA18C94D702FFEA10"
+            {
+            "SourcePath" = "8:..\\CallCenterForWpf\\bin\\x86\\Debug\\driver\\driverfile\\spc\\remark.txt"
+            "TargetName" = "8:remark.txt"
+            "Tag" = "8:"
+            "Folder" = "8:_2FF311F2C6D04F97B41473EC02D818A6"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -4921,12 +5571,52 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F1BCD5D0C02D47168729401D48F25B45"
+            {
+            "SourcePath" = "8:..\\CallCenterForWpf\\bin\\x86\\Debug\\driver\\driverfile\\TelMateI64.SYS"
+            "TargetName" = "8:TelMateI64.SYS"
+            "Tag" = "8:"
+            "Folder" = "8:_36B5CBEC06AD4988A3E6747BFB9A42D1"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F24B5927DC104A6BB7413FBD72774475"
             {
             "SourcePath" = "8:..\\CallCenterForWpf\\bin\\x86\\Debug\\locales\\bg.pak"
             "TargetName" = "8:bg.pak"
             "Tag" = "8:"
             "Folder" = "8:_E171F1D56B554D73AF97D163EE7E6D8C"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F3DAE925D560414AA6CE0FFFD0356BB1"
+            {
+            "SourcePath" = "8:..\\CallCenterForWpf\\bin\\x86\\Debug\\driver\\driverfile\\spc\\bcdedit.exe"
+            "TargetName" = "8:bcdedit.exe"
+            "Tag" = "8:"
+            "Folder" = "8:_2FF311F2C6D04F97B41473EC02D818A6"
             "Condition" = "8:"
             "Transitive" = "11:FALSE"
             "Vital" = "11:TRUE"
@@ -5232,6 +5922,72 @@
             "Property" = "8:TARGETDIR"
                 "Folders"
                 {
+                    "{9EF0B969-E518-4E46-987F-47570745A589}:_3D68FA9416EB4385A8633FD627604C16"
+                    {
+                    "Name" = "8:driver"
+                    "AlwaysCreate" = "11:FALSE"
+                    "Condition" = "8:"
+                    "Transitive" = "11:FALSE"
+                    "Property" = "8:_2B54E80C9E1543C08A946EE3AE8C6E9E"
+                        "Folders"
+                        {
+                            "{9EF0B969-E518-4E46-987F-47570745A589}:_36B5CBEC06AD4988A3E6747BFB9A42D1"
+                            {
+                            "Name" = "8:driverfile"
+                            "AlwaysCreate" = "11:FALSE"
+                            "Condition" = "8:"
+                            "Transitive" = "11:FALSE"
+                            "Property" = "8:_7A8EE6324F1B43B88D584488CB9AA1BA"
+                                "Folders"
+                                {
+                                    "{9EF0B969-E518-4E46-987F-47570745A589}:_2FF311F2C6D04F97B41473EC02D818A6"
+                                    {
+                                    "Name" = "8:spc"
+                                    "AlwaysCreate" = "11:FALSE"
+                                    "Condition" = "8:"
+                                    "Transitive" = "11:FALSE"
+                                    "Property" = "8:_168C315A7589447EAE7E00A0645F0B24"
+                                        "Folders"
+                                        {
+                                        }
+                                    }
+                                    "{9EF0B969-E518-4E46-987F-47570745A589}:_F4CB9403228D4E049F3CCBCBB0B131EF"
+                                    {
+                                    "Name" = "8:html"
+                                    "AlwaysCreate" = "11:FALSE"
+                                    "Condition" = "8:"
+                                    "Transitive" = "11:FALSE"
+                                    "Property" = "8:_362418A54E944EDE96D402E2172E26A0"
+                                        "Folders"
+                                        {
+                                        }
+                                    }
+                                    "{9EF0B969-E518-4E46-987F-47570745A589}:_FD888BAEBDAB4B19BA7F2E98D279A2C3"
+                                    {
+                                    "Name" = "8:ocx"
+                                    "AlwaysCreate" = "11:FALSE"
+                                    "Condition" = "8:"
+                                    "Transitive" = "11:FALSE"
+                                    "Property" = "8:_8A6A474FC50A46D4ABD24DA996736637"
+                                        "Folders"
+                                        {
+                                        }
+                                    }
+                                }
+                            }
+                            "{9EF0B969-E518-4E46-987F-47570745A589}:_49D0AF78E91642ECAA7CA907368B6A40"
+                            {
+                            "Name" = "8:virtualaudiodriver"
+                            "AlwaysCreate" = "11:FALSE"
+                            "Condition" = "8:"
+                            "Transitive" = "11:FALSE"
+                            "Property" = "8:_3AB50CE810AB42DCB656F4D3B5BB89A4"
+                                "Folders"
+                                {
+                                }
+                            }
+                        }
+                    }
                     "{9EF0B969-E518-4E46-987F-47570745A589}:_932BF8CC86BC42B4B4F0127D7390ACF1"
                     {
                     "Name" = "8:Resources"
@@ -5284,7 +6040,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:呼叫中心单机版"
         "ProductCode" = "8:{CB1C44B9-3D60-4DFE-B2FB-CBAE49CFFDCB}"
-        "PackageCode" = "8:{FBA8D8EB-99A7-4FE2-B1BE-000AC701B2A8}"
+        "PackageCode" = "8:{B4CB4ECA-62A5-4DD1-B9E1-6BFAC4538349}"
         "UpgradeCode" = "8:{6BD5EA9A-6859-46A6-936F-4CAE3C8F0A30}"
         "AspNetVersion" = "8:"
         "RestartWWWService" = "11:FALSE"

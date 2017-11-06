@@ -148,7 +148,7 @@ namespace CallCenterLocal.Control
             }
             catch(Exception e)
             {
-                throw (e);
+                return null;
             }
 
         }

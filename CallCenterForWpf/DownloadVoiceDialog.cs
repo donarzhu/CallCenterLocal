@@ -83,11 +83,7 @@ namespace CallCenterForWpf
                         }));
                         if(downSize <= fileSize)
                         {
-                            this.BeginInvoke(new InvokeDelegate(() =>
-                            {
-                                DownloadInfoTextBox.Text = "文件下载失败";
-                            }));
-                            return;
+                            Console.WriteLine("文件下载异常的长度");
                         }
                         ZipHelper.UnZip2(objFullFileName, filePath, new UZipProgressDelegate((total, count) => {
                             this.BeginInvoke(new InvokeDelegate(() =>
