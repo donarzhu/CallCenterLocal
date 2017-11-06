@@ -24,6 +24,7 @@ namespace CallCenterLocal.Control
 
         public static void SetFlowCombom(ResultWorkflows getResult, ComboBox WorkflowCombo )
         {
+            Dict.Clear();
             foreach (Workflow info in getResult.data)
             {
                 try

@@ -41,7 +41,22 @@ namespace CallCenterForWpf
             public Boolean IsCurrentPage { get; private set; } = false;
             public System.Windows.Controls.Button CommandButton { get; private set; } = null;
             public String PageUri { get; private set; } = null;
+            public bool IsUri { get; set; } = true;
             static String _current = "";
+            public static bool RemoveCommad(String cmd)
+            {
+                try
+                {
+                    PageInfo page = Pages[cmd];
+                    if (page == null)
+                        return false;
+                    return Pages.Remove(cmd);
+                }
+                catch
+                {
+                    return false;
+                }
+            }
             public static PageInfo CurrentPage {
                 get
                 {
@@ -65,13 +80,16 @@ namespace CallCenterForWpf
                         currentPage = Pages[value];
                         if (currentPage == null)
                             return;
-                        if (oldPage != null)
+                        if (oldPage != null && oldPage.CommandButton != null)
                         {
                             oldPage.CommandButton.Background = oldPage.NormalImage;
                             oldPage.CommandButton.Foreground = new SolidColorBrush(Colors.Black);
                         }
-                        currentPage.CommandButton.Background = currentPage.SelectImage;
-                        currentPage.CommandButton.Foreground = new SolidColorBrush(Colors.White);
+                        if (currentPage!=null && currentPage.CommandButton != null)
+                        {
+                            currentPage.CommandButton.Background = currentPage.SelectImage;
+                            currentPage.CommandButton.Foreground = new SolidColorBrush(Colors.White);
+                        }
                         _current = value;
                     }
                     catch(Exception e)
@@ -103,6 +121,7 @@ namespace CallCenterForWpf
         public const string blacklistUri = "https://ccc.aicyber.com/static/dist/index.html#/blacklist";
         public const string settingUri = "https://ccc.aicyber.com/static/dist/index.html#/setting";
         public const string statisticsUri = "https://ccc.aicyber.com/static/dist/index.html#/statistics";
+        private const String loginCmd = "login";
         public const string TokenKey = "auth_t";
         public const int ThreadSleepTime = 5000;
         public const int waitThreadSleepTime = 500;
@@ -129,22 +148,134 @@ namespace CallCenterForWpf
         //LoadPage BlacklistPage { get; set; }
         //LoadPage SetupPage { get; set; }
         //LoadPage RecordPage { get; set; }
-
         public MainWindow()
         {
-            InitializeComponent();
-            main = this;
-            mCookieManager = CefSharp.Cef.GetGlobalCookieManager();
-            ClearCookie();
-            waitingBox = new frmWaitingBox((obj, args) =>
+            try
             {
+                InitializeComponent();
+                main = this;
+                phoneControl.openDevInit();
+                mCookieManager = CefSharp.Cef.GetGlobalCookieManager();
+                ClearCookie();
+                //tempTest temp = new tempTest();
+                //temp.Show();
+                frame.Height = mainPanel.Height;
+                frame.CommandBindings.Add(new CommandBinding(NavigationCommands.BrowseBack, OnBrowseBack));
+                frame.KeyDown += Frame_KeyDown;
+                Browser.DownloadHandler = new DownloadHandler();
 
-            });
-            waitingBox.StartPosition = FormStartPosition.CenterScreen;
-            waitingBox.Show();
+                loginPage = new login();
+                PageInfo loginPafge = new PageInfo(
+                        loginCmd,
+                        loginPage,
+                        null,
+                        null,
+                        null,
+                        loginPageUri);
+                PageInfo.CurrentCommand = loginCmd;
+                SetPage(PageInfo.CurrentPage);
+                Browser.FrameLoadEnd += Browser_FrameLoadEnd;
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+        }
 
-            tempTest temp = new tempTest();
-            //temp.Show();
+        void initData()
+        {
+            ImageBrush selectBrush = new ImageBrush { ImageSource = new BitmapImage(new Uri(@"Resources/bar06.png", UriKind.Relative)) };
+
+
+            bool isSucced = PageInfo.RemoveCommad("testPage");
+            TestPage = new TestPage();
+            PageInfo testPageInfo = new PageInfo(
+                "testPage",
+                TestPage,
+                (ImageBrush)testPage.Background,
+                selectBrush,
+                testPage,
+                null
+                );
+            if (isSucced)
+                return;
+            LoadPage = new LoadPage();
+            PageInfo workflowPageInfo = new PageInfo(
+                    "workflowEdit",
+                    null,
+                    (ImageBrush)workflowEdit.Background,
+                    selectBrush,
+                    workflowEdit,
+                    repositoryUri);
+            PageInfo taskCreatePageInfo = new PageInfo(
+                    "taskCreate",
+                    null,
+                    (ImageBrush)taskCreate.Background,
+                    selectBrush,
+                    taskCreate,
+                    taskcreateUri);
+            PageInfo taskManagerPage = new PageInfo(
+                    "taskManager",
+                    null,
+                    (ImageBrush)taskManager.Background,
+                    selectBrush,
+                    taskManager,
+                    taskeditUri);
+            PageInfo vioceRecordPage = new PageInfo(
+                    "voiceRecord",
+                    null,
+                    (ImageBrush)taskManager.Background,
+                    selectBrush,
+                    voiceRecord,
+                    loginPageUri);
+            PageInfo dataQueryPageInfo = new PageInfo(
+                    "dataQuery",
+                    null,
+                    (ImageBrush)dataQuery.Background,
+                    selectBrush,
+                    dataQuery,
+                    resultUri);
+            PageInfo statisticsInfo = new PageInfo(
+                    "statistics",
+                    null,
+                    (ImageBrush)dataQuery.Background,
+                    selectBrush,
+                    statistics,
+                    statisticsUri);
+            PageInfo codeManagerPageInfo = new PageInfo(
+                    "codeMagager",
+                    null,
+                    (ImageBrush)codeMagager.Background,
+                    selectBrush,
+                    codeMagager,
+                    activecodeUri);
+            PageInfo blacklistPageInfo = new PageInfo(
+                    "blacklist",
+                    null,
+                    (ImageBrush)blacklist.Background,
+                    selectBrush,
+                    blacklist,
+                    blacklistUri);
+            PageInfo setupPageInfo = new PageInfo(
+                    "setup",
+                    null,
+                    (ImageBrush)setup.Background,
+                    selectBrush,
+                    setup,
+                    settingUri);
+
+        }
+
+        private void Frame_KeyDown(object sender, System.Windows.Input.KeyEventArgs e)
+        {
+            if(e.Key == Key.Back)
+            {
+                
+            }
+        }
+
+        void OnBrowseBack(object sender, ExecutedRoutedEventArgs args)
+        {
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -155,6 +286,17 @@ namespace CallCenterForWpf
                 this.Height = SystemParameters.PrimaryScreenHeight;
             SrcWidth = this.Width;
             SrcHeight = this.Height;
+
+            //login login = new login();
+            //SetPage(login);
+
+            waitingBox = new frmWaitingBox((obj, args) =>
+            {
+
+            });
+            waitingBox.StartPosition = FormStartPosition.CenterScreen;
+            waitingBox.Show();
+
         }
 
         private void WindowMax()
@@ -198,13 +340,15 @@ namespace CallCenterForWpf
             main.Dispatcher.Invoke(() => {
                 try
                 {
-                    PageInfo.CurrentCommand = param;
-                    PageInfo.CurrentPage.Page.Width = main.frame.ActualWidth;
-                    PageInfo.CurrentPage.Page.Height = main.frame.ActualHeight;
 
                     switch (param)
                     {
                         case "taskCreate":
+                            if(PageCommon.Dict.Count<=0)
+                            {
+                                System.Windows.MessageBox.Show("没有流程，请先创建流程！");
+                                return;
+                            }
                             DownloadVoiceDialog dlg = new DownloadVoiceDialog
                             {
                                 IsTaskCreatUse = true,
@@ -221,12 +365,18 @@ namespace CallCenterForWpf
                             break;
                     }
 
-                    SetPage(PageInfo.CurrentPage.Page);
-                    if(PageInfo.CurrentPage.PageUri != null && PageInfo.CurrentPage.Page is LoadPage)
+                    PageInfo.CurrentCommand = param;
+                    if (PageInfo.CurrentPage.Page != null)
                     {
-                        if(((LoadPage)PageInfo.CurrentPage.Page).Uri != PageInfo.CurrentPage.PageUri)
-                            ((LoadPage)PageInfo.CurrentPage.Page).Uri = PageInfo.CurrentPage.PageUri;
+                        PageInfo.CurrentPage.Page.Width = main.frame.ActualWidth;
+                        PageInfo.CurrentPage.Page.Height = main.frame.ActualHeight;
                     }
+                    SetPage(PageInfo.CurrentPage);
+                    //if(PageInfo.CurrentPage.PageUri != null && PageInfo.CurrentPage.Page == null)
+                    //{
+                    //    if(Browser.Address != PageInfo.CurrentPage.PageUri)
+                    //        Browser.Address = PageInfo.CurrentPage.PageUri;
+                    //}
 
                 }
                 catch(Exception e)
@@ -257,12 +407,14 @@ namespace CallCenterForWpf
         {
             ClearCookie();
             isExit = true;
+            phoneControl.closeDev();
             if (sender == closeButton)
                 System.Windows.Application.Current.Shutdown(-1);
         }
 
         private void ClearCookie()
         {
+            Token.TokenCode = "";
             mCookieManager.DeleteCookies(Domain, TokenKey);
         }
 
@@ -283,6 +435,8 @@ namespace CallCenterForWpf
             //判断是否是需要获取cookie的页面
             if (_url.Contains(loginPageUri))
             {
+                try
+                { 
                 Thread checkThread = new Thread(() =>
                 {
                     while (String.IsNullOrEmpty(Token.TokenCode) && !isExit)
@@ -294,6 +448,11 @@ namespace CallCenterForWpf
 
                 });
                 checkThread.Start();
+                }
+                catch(Exception ex)
+                {
+                    System.Console.WriteLine(ex.Message);
+                }
             }
         }
         string Domain { get; set; } = "";
@@ -302,41 +461,53 @@ namespace CallCenterForWpf
             //注册获取cookie回调事件
             CookieVisitor visitor = new CookieVisitor();
             visitor.SendCookie += (Cookie obj) => {
-                if (obj.Name != TokenKey)
-                    return;
-                Token.TokenCode = obj.Value;
-                Domain = obj.Domain;
-                ShowLeftBar();
-                StartFistPage();
-                //mIsEndCheck = true;
-                if (!String.IsNullOrEmpty(Token.TokenCode))
+                switch (obj.Name)
                 {
-                    Thread getDialPhoneManagerThread = new Thread(() =>
-                    {
-                        while (!this.isExit)
+                    case "user_n":
+                        //userName
+                        main.Dispatcher.Invoke(() => {
+                            userName.Text = obj.Value;
+                            quitButton.Visibility = Visibility.Visible;
+                        });
+                        break;
+                    case TokenKey:
+                        Token.TokenCode = obj.Value;
+                        Domain = obj.Domain;
+                        ShowLeftBar();
+                        StartFistPage();
+                        //mIsEndCheck = true;
+                        if (!String.IsNullOrEmpty(Token.TokenCode))
                         {
-                            Thread.Sleep(ThreadSleepTime);
-                            try
+                            Thread getDialPhoneManagerThread = new Thread(() =>
                             {
-                                String retString = HttpControl.GetHttpResponseList(HttpControl.GetNeedCallPhoneCmd, 50000, Token.TokenCode);
-                                List<DialPhoneInfo> infos = (List<DialPhoneInfo>)HttpControl.JSONStringToList<DialPhoneInfo>(retString);
-                                DialPhoneInfo[] dialInfos = new DialPhoneInfo[infos.Count];
-                                int i = 0;
-                                foreach (DialPhoneInfo info in infos)
+                                while (!this.isExit)
                                 {
-                                    dialInfos[i] = info;
-                                    i++;
+                                    Thread.Sleep(ThreadSleepTime);
+                                    try
+                                    {
+                                        String retString = HttpControl.GetHttpResponseList(HttpControl.GetNeedCallPhoneCmd, 50000, Token.TokenCode);
+                                        List<DialPhoneInfo> infos = (List<DialPhoneInfo>)HttpControl.JSONStringToList<DialPhoneInfo>(retString);
+                                        DialPhoneInfo[] dialInfos = new DialPhoneInfo[infos.Count];
+                                        int i = 0;
+                                        foreach (DialPhoneInfo info in infos)
+                                        {
+                                            dialInfos[i] = info;
+                                            i++;
+                                        }
+                                        phoneControl.startDialPstn(dialInfos, this.Token.TokenCode);
+                                    }
+                                    catch (Exception ex)
+                                    {
+
+                                    }
                                 }
-                                phoneControl.startDialPstn(dialInfos, this.Token.TokenCode);
-                            }
-                            catch (Exception ex)
-                            {
 
-                            }
+                            });
+                            getDialPhoneManagerThread.Start();
                         }
-
-                    });
-                    getDialPhoneManagerThread.Start();
+                        break;
+                    default:
+                        break;
                 }
             }; ;
             mCookieManager.VisitAllCookies(visitor);
@@ -349,89 +520,10 @@ namespace CallCenterForWpf
             {
                 try
                 {
-
-                    ImageBrush selectBrush = new ImageBrush { ImageSource = new BitmapImage(new Uri(@"Resources/bar06.png", UriKind.Relative)) };
-
-                     TestPage = new TestPage
-                    {
-
-                     };
-                    PageInfo testPageInfo = new PageInfo(
-                        "testPage",
-                        TestPage,
-                        (ImageBrush)testPage.Background,
-                        selectBrush,
-                        testPage,
-                        null
-                        );
-                    SetPage(TestPage);
-                    PageInfo.CurrentCommand = testPageInfo.Command;
+                    initData();
+                    PageInfo.CurrentCommand = "testPage";
+                    SetPage(PageInfo.CurrentPage);
                     ResizePage();
-
-                    LoadPage = new LoadPage();
-                    PageInfo workflowPageInfo = new PageInfo(
-                            "workflowEdit",
-                            LoadPage,
-                            (ImageBrush)workflowEdit.Background,
-                            selectBrush,
-                            workflowEdit,
-                            repositoryUri);
-                    PageInfo taskCreatePageInfo = new PageInfo(
-                            "taskCreate",
-                            LoadPage,
-                            (ImageBrush)taskCreate.Background,
-                            selectBrush,
-                            taskCreate,
-                            taskcreateUri);
-                    PageInfo taskManagerPage = new PageInfo(
-                            "taskManager",
-                            LoadPage,
-                            (ImageBrush)taskManager.Background,
-                            selectBrush,
-                            taskManager,
-                            taskeditUri);
-                    PageInfo vioceRecordPage = new PageInfo(
-                            "voiceRecord",
-                            LoadPage,
-                            (ImageBrush)taskManager.Background,
-                            selectBrush,
-                            voiceRecord,
-                            loginPageUri);
-                    PageInfo dataQueryPageInfo = new PageInfo(
-                            "dataQuery",
-                            LoadPage,
-                            (ImageBrush)dataQuery.Background,
-                            selectBrush,
-                            dataQuery,
-                            resultUri);
-                    PageInfo statisticsInfo = new PageInfo(
-                            "statistics",
-                            LoadPage,
-                            (ImageBrush)dataQuery.Background,
-                            selectBrush,
-                            statistics,
-                            statisticsUri);
-                    PageInfo codeManagerPageInfo = new PageInfo(
-                            "codeMagager",
-                            LoadPage,
-                            (ImageBrush)codeMagager.Background,
-                            selectBrush,
-                            codeMagager,
-                            activecodeUri);
-                    PageInfo blacklistPageInfo = new PageInfo(
-                            "blacklist",
-                            LoadPage,
-                            (ImageBrush)blacklist.Background,
-                            selectBrush,
-                            blacklist,
-                            blacklistUri);
-                    PageInfo setupPageInfo = new PageInfo(
-                            "setup",
-                            LoadPage,
-                            (ImageBrush)setup.Background,
-                            selectBrush,
-                            setup,
-                            settingUri);
 
                 }
                 catch (Exception e)
@@ -443,9 +535,24 @@ namespace CallCenterForWpf
 
         }
 
-        private void SetPage(Page page)
+        private void SetPage(PageInfo pageInfo)
         {
-            this.frame.Content = page;
+            if (pageInfo.Page != null)
+            {
+                this.frame.Visibility = Visibility.Visible;
+                this.frame.Height = this.mainPanel.Height;
+                this.Browser.Visibility = Visibility.Hidden;
+                pageInfo.Page.Width = this.mainPanel.Width;
+                pageInfo.Page.Height = this.mainPanel.Height;
+                this.frame.Content = pageInfo.Page;
+            }
+            else
+            {
+                this.Browser.Visibility = Visibility.Visible;
+                this.Browser.Height = this.mainPanel.Height;
+                this.frame.Visibility = Visibility.Hidden;
+                this.Browser.Address = pageInfo.PageUri;
+            }
 
         }
         private void ShowLeftBar()
@@ -455,6 +562,36 @@ namespace CallCenterForWpf
                 LeftBar.Visibility = Visibility.Visible;
             });
         }
+
+        private void HideLeftBar()
+        {
+            main.Dispatcher.Invoke(() =>
+            {
+                LeftBar.Width = 0;
+                LeftBar.Visibility = Visibility.Hidden;
+            });
+         }
+
+        private void quitButton_Click(object sender, RoutedEventArgs e)
+        {
+            ClearCookie();
+            HideLeftBar();
+            PageInfo.RemoveCommad(loginCmd);
+            loginPage = new login();
+            PageInfo loginPafge = new PageInfo(
+                    loginCmd,
+                    loginPage,
+                    null,
+                    null,
+                    null,
+                    loginPageUri);
+            userName.Text = "";
+            quitButton.Visibility = Visibility.Hidden;
+            PageInfo.CurrentCommand = loginCmd;
+            SetPage(PageInfo.CurrentPage);
+            Browser.FrameLoadEnd += Browser_FrameLoadEnd;
+        }
+
     }
     public class Window1ViewModel
     {
@@ -488,4 +625,32 @@ namespace CallCenterForWpf
         }
     }
 
+    internal class DownloadHandler : IDownloadHandler
+    {
+
+
+        void IDownloadHandler.OnBeforeDownload(IBrowser browser, DownloadItem downloadItem, IBeforeDownloadCallback callback)
+        {
+            if (!callback.IsDisposed)
+            {
+                using (callback)
+                {
+                    callback.Continue(@"C:\Users\" +
+                            System.Security.Principal.WindowsIdentity.GetCurrent().Name +
+                            @"\Downloads\" +
+                            downloadItem.SuggestedFileName,
+                        showDialog: true);
+                }
+            }
+        }
+
+        void IDownloadHandler.OnDownloadUpdated(IBrowser browser, DownloadItem downloadItem, IDownloadItemCallback callback)
+        {
+        }
+
+        public bool OnDownloadUpdated(CefSharp.DownloadItem downloadItem)
+        {
+            return false;
+        }
+    }
 }

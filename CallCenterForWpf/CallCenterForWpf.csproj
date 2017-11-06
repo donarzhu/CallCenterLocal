@@ -84,9 +84,6 @@
     <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\CommonServiceLocator.1.2\lib\portable-windows8+net40+sl5+windowsphone8\Microsoft.Practices.ServiceLocation.dll</HintPath>
     </Reference>
-    <Reference Include="NAudio, Version=1.8.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\NAudio.1.8.3\lib\net35\NAudio.dll</HintPath>
-    </Reference>
     <Reference Include="phoneDll">
       <HintPath>..\..\..\Lib\work\phoneDll.dll</HintPath>
     </Reference>
@@ -153,7 +150,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Control\AudioControl.cs" />
     <Compile Include="Control\CorpusControlItem.xaml.cs">
       <DependentUpon>CorpusControlItem.xaml</DependentUpon>
     </Compile>

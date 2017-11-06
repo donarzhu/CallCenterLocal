@@ -12,11 +12,6 @@
         <vm:Window1ViewModel />
     </Window.DataContext>
     <Grid Margin="6,0,0,0" Background="Transparent">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition />
-            <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
         <DockPanel x:Name="bro" Grid.Row="1">
             <DockPanel Height="40" DockPanel.Dock="Top" MouseLeftButtonDown="DockPanel_MouseLeftButtonDown">
                 <DockPanel.Background>
@@ -30,6 +25,11 @@
                 </Canvas>
 
             </DockPanel>
+            <StackPanel Orientation="Horizontal" Height="25" DockPanel.Dock="Bottom" Background="{DynamicResource {x:Static SystemColors.ControlDarkBrushKey}}">
+                <TextBlock Text="当前登录人：" VerticalAlignment="Bottom" Margin="0,0,0,5"/>
+                <TextBlock Name="userName" VerticalAlignment="Center"/>
+                <Button Name="quitButton" Content="退出" Height="20" Width="50" Visibility="Hidden" Click="quitButton_Click" Margin="20,0,0,0"/>
+            </StackPanel>
             <StackPanel Name="LeftBar" Orientation="Vertical" DockPanel.Dock="Left" Width="0" MouseLeftButtonDown="StackPanel_MouseLeftButtonDown" Visibility="Hidden">
                 <StackPanel.Background>
                     <ImageBrush ImageSource="pack://siteoforigin:,,,/Resources/page-bg.jpg"/>
@@ -106,7 +106,10 @@
                 </Canvas>
                 <Canvas Width="150" Height="50"/>
             </StackPanel>
-            <Frame Name="frame" DockPanel.Dock="Right" Source="login.xaml" NavigationUIVisibility="Hidden" Grid.Row="1" Margin="0,0,0,0"></Frame>
+            <Grid Name="mainPanel"  DockPanel.Dock="Right" Background="White">
+                <wpf:ChromiumWebBrowser x:Name="Browser" Visibility="Hidden"/>
+                <Frame Name="frame" NavigationUIVisibility="Hidden"  Margin="0,0,0,0" JournalOwnership="UsesParentJournal"></Frame>
+            </Grid>
         </DockPanel>
     </Grid>
 </Window>
