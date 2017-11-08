@@ -615,6 +615,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_7DE2471D67964235A7E8CD54D7BC2ED4"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_7F252A11F2624002B70E32DBCDABB0FB"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -1319,6 +1325,12 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_586AEEAAB1F1C67EAFABEAAE885EACC3"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_7DE2471D67964235A7E8CD54D7BC2ED4"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -3645,6 +3657,37 @@
                     }
                 }
             "SourcePath" = "8:..\\CallCenterForWpf\\bin\\x86\\Debug\\AipSdk.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_A3B7599A31DE40279CF99F5F36692E4C"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_7DE2471D67964235A7E8CD54D7BC2ED4"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:NAudio, Version=1.8.3.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_7DE2471D67964235A7E8CD54D7BC2ED4"
+                    {
+                    "Name" = "8:NAudio.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:..\\CallCenterForWpf\\bin\\x86\\Debug\\NAudio.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_A3B7599A31DE40279CF99F5F36692E4C"
@@ -6040,7 +6083,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:呼叫中心单机版"
         "ProductCode" = "8:{CB1C44B9-3D60-4DFE-B2FB-CBAE49CFFDCB}"
-        "PackageCode" = "8:{B4CB4ECA-62A5-4DD1-B9E1-6BFAC4538349}"
+        "PackageCode" = "8:{DA9F30E6-9C04-4971-8F6E-797D86CE32B8}"
         "UpgradeCode" = "8:{6BD5EA9A-6859-46A6-936F-4CAE3C8F0A30}"
         "AspNetVersion" = "8:"
         "RestartWWWService" = "11:FALSE"

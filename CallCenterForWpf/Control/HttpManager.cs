@@ -178,6 +178,7 @@ namespace CallCenterLocal.Control
             {
                 String message = ex.Message;
                 Console.WriteLine(message);
+                throw (ex);
             }
             return path;
         }

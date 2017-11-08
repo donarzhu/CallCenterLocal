@@ -37,71 +37,80 @@ namespace CallCenterForWpf
         private delegate void InvokeDelegate();
         private void DownloadControlButton_Click(object sender, EventArgs e)
         {
-            String workflowName = this.FlowComboBox.Text;
-            if (String.IsNullOrEmpty(workflowName))
+            try
             {
-                MessageBox.Show("请选择工作流程！");
-                return;
-            }
-            String workflowId = PageCommon.Dict[workflowName];
-            if (!String.IsNullOrEmpty(workflowId))
-            {
-                TestWorkflow flow = new TestWorkflow();
-                flow.flow_id = workflowId;
-                string param = HttpControl.ObjectToJson(flow);
-                string cmd = HttpControl.GeUrlInfoCmd + flow.flow_id + "/bot/";
-                String strResult = HttpControl.GetHttpResponseList(cmd, 500, this.Token.TokenCode);
-                ResultFtpInfo ret = (ResultFtpInfo)HttpControl.JsonToObject<ResultFtpInfo>(strResult);
-                if (strResult == null)
+                String workflowName = this.FlowComboBox.Text;
+                if (String.IsNullOrEmpty(workflowName))
                 {
-                    MessageBox.Show("网络连接失败！");
+                    MessageBox.Show("请选择工作流程！");
                     return;
                 }
-                if(ret.message != "成功")
+                String workflowId = PageCommon.Dict[workflowName];
+                if (!String.IsNullOrEmpty(workflowId))
                 {
-                    MessageBox.Show("网络连接失败！");
-                    return;
-
-                }
-                if (isNewDownload)
-                    this.downloadIndex = 0;
-                var filePath = CPlayVoicePathManager.GetVoicePath(flow.flow_id);
-                var objFullFileName = filePath + flow.flow_id.ToString() + ".zip";
-                Thread thread = new Thread(() =>
-                {
-                    try
+                    TestWorkflow flow = new TestWorkflow();
+                    flow.flow_id = workflowId;
+                    string param = HttpControl.ObjectToJson(flow);
+                    string cmd = HttpControl.GeUrlInfoCmd + flow.flow_id + "/bot/";
+                    String strResult = HttpControl.GetHttpResponseList(cmd, 500, this.Token.TokenCode);
+                    ResultFtpInfo ret = (ResultFtpInfo)HttpControl.JsonToObject<ResultFtpInfo>(strResult);
+                    if (strResult == null)
                     {
-                        long downSize = 0;
-                        long fileSize = 0;
-                        HttpManager.HttpDownloadFile(ret.data.url, objFullFileName, new UZipProgressDelegate((count, total)=>{
-                            this.BeginInvoke(new InvokeDelegate(() =>
-                            {
-                                downSize = total;
-                                fileSize = count;
-                                DownloadInfoTextBox.Text = "正在下载文件:"+ count.ToString() + "/" + total.ToString();
-                            }));
-                        }));
-                        if(downSize <= fileSize)
+                        MessageBox.Show("网络连接失败！");
+                        return;
+                    }
+                    if (ret.message != "成功")
+                    {
+                        MessageBox.Show("网络连接失败！");
+                        return;
+
+                    }
+                    if (isNewDownload)
+                        this.downloadIndex = 0;
+                    var filePath = CPlayVoicePathManager.GetVoicePath(flow.flow_id);
+                    var objFullFileName = filePath + flow.flow_id.ToString() + ".zip";
+                    Thread thread = new Thread(() =>
+                    {
+                        try
                         {
-                            Console.WriteLine("文件下载异常的长度");
-                        }
-                        ZipHelper.UnZip2(objFullFileName, filePath, new UZipProgressDelegate((total, count) => {
-                            this.BeginInvoke(new InvokeDelegate(() =>
+                            long downSize = 0;
+                            long fileSize = 0;
+                            HttpManager.HttpDownloadFile(ret.data.url, objFullFileName, new UZipProgressDelegate((count, total) =>
                             {
-                                DownloadInfoTextBox.Text = "解压文件进度"+total.ToString() + "/" + count.ToString();
+                                this.BeginInvoke(new InvokeDelegate(() =>
+                                {
+                                    downSize = total;
+                                    fileSize = count;
+                                    DownloadInfoTextBox.Text = "正在下载文件:" + count.ToString() + "/" + total.ToString();
+                                }));
                             }));
+                            if (downSize <= fileSize)
+                            {
+                                Console.WriteLine("文件下载异常的长度");
+                            }
+                            ZipHelper.UnZip2(objFullFileName, filePath, new UZipProgressDelegate((total, count) =>
+                            {
+                                this.BeginInvoke(new InvokeDelegate(() =>
+                                {
+                                    DownloadInfoTextBox.Text = "解压文件进度" + total.ToString() + "/" + count.ToString();
+                                }));
 
-                        }));
-                        MessageBox.Show("下载完成！");
-                    }
-                    catch(Exception ex)
-                    {
-                        var err = ex.Message;
-                    }
+                            }));
+                            MessageBox.Show("下载完成！");
+                        }
+                        catch (Exception ex)
+                        {
+                            Console.WriteLine(ex.Message);
+                        }
 
-                });
-                thread.Start();
+                    });
+                    thread.Start();
 
+                }
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
             }
         }
 

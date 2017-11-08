@@ -100,6 +100,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(376, 196);
+            this.ControlBox = false;
             this.Controls.Add(this.LabText);
             this.Controls.Add(this.DownloadControlButton);
             this.Controls.Add(this.DownloadInfoTextBox);
