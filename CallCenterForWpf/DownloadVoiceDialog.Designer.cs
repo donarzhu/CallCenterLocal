@@ -34,6 +34,7 @@
             this.DownloadInfoTextBox = new System.Windows.Forms.TextBox();
             this.DownloadControlButton = new System.Windows.Forms.Button();
             this.LabText = new System.Windows.Forms.Label();
+            this.CloseButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -76,7 +77,7 @@
             // 
             // DownloadControlButton
             // 
-            this.DownloadControlButton.Location = new System.Drawing.Point(126, 105);
+            this.DownloadControlButton.Location = new System.Drawing.Point(45, 114);
             this.DownloadControlButton.Name = "DownloadControlButton";
             this.DownloadControlButton.Size = new System.Drawing.Size(120, 34);
             this.DownloadControlButton.TabIndex = 4;
@@ -94,6 +95,16 @@
             this.LabText.TabIndex = 5;
             this.LabText.Text = "说明：录音文件用于任务外呼时的机器人声音";
             // 
+            // CloseButton
+            // 
+            this.CloseButton.Location = new System.Drawing.Point(203, 114);
+            this.CloseButton.Name = "CloseButton";
+            this.CloseButton.Size = new System.Drawing.Size(120, 34);
+            this.CloseButton.TabIndex = 6;
+            this.CloseButton.Text = "关闭窗口";
+            this.CloseButton.UseVisualStyleBackColor = true;
+            this.CloseButton.Click += new System.EventHandler(this.CloseButton_Click);
+            // 
             // DownloadVoiceDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -101,6 +112,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(376, 196);
             this.ControlBox = false;
+            this.Controls.Add(this.CloseButton);
             this.Controls.Add(this.LabText);
             this.Controls.Add(this.DownloadControlButton);
             this.Controls.Add(this.DownloadInfoTextBox);
@@ -127,5 +139,6 @@
         private System.Windows.Forms.TextBox DownloadInfoTextBox;
         private System.Windows.Forms.Button DownloadControlButton;
         private System.Windows.Forms.Label LabText;
+        private System.Windows.Forms.Button CloseButton;
     }
 }

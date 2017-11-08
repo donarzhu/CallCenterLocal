@@ -383,6 +383,16 @@ namespace CallCenterForWpf.Properties {
         /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
+        public static System.Drawing.Bitmap mix {
+            get {
+                object obj = ResourceManager.GetObject("mix", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
         public static System.Drawing.Bitmap page_bg {
             get {
                 object obj = ResourceManager.GetObject("page_bg", resourceCulture);

@@ -34,6 +34,7 @@ namespace CallCenterForWpf
         {
             try
             {
+                WorkflowCombo.Items.Clear();
                 ResultWorkflows getResult = PageCommon.GetWorkflows(MainWindow.main.Token);
                 if (getResult == null || getResult.successful == false)
                     return;

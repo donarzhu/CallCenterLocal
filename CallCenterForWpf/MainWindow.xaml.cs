@@ -344,7 +344,8 @@ namespace CallCenterForWpf
                     switch (param)
                     {
                         case "taskCreate":
-                            if(PageCommon.Dict.Count<=0)
+                            TestPage.GetData();
+                            if (PageCommon.Dict.Count<=0)
                             {
                                 System.Windows.MessageBox.Show("没有流程，请先创建流程！");
                                 return;
@@ -360,6 +361,9 @@ namespace CallCenterForWpf
                             {
                                 Domain = Domain, Name = "flow_id", Value = wId, Expires = DateTime.MaxValue
                             });
+                            break;
+                        case "testPage":
+                            TestPage.GetData();
                             break;
                         default:
                             break;
@@ -605,6 +609,10 @@ namespace CallCenterForWpf
             SetPage(PageInfo.CurrentPage);
         }
 
+        private void mixButton_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
+        }
     }
     public class Window1ViewModel
     {

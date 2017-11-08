@@ -15,7 +15,16 @@ namespace CallCenterForWpf
 {
     public partial class DownloadVoiceDialog : Form
     {
-        public Boolean IsTaskCreatUse { get; set; } = false;
+        bool _isTaskCreate = false;
+        ToolTip buttontTt = new ToolTip();
+        public Boolean IsTaskCreatUse {
+            get { return _isTaskCreate; }
+            set { _isTaskCreate = value;
+                CloseButton.Text = "选择流程";
+                if(_isTaskCreate)
+                    buttontTt.SetToolTip(CloseButton, "选择流程并关闭窗口");
+            }
+        }
         public String ShowText { get { return LabText.Text; }
             set { LabText.Text = value; }
         }
@@ -97,6 +106,10 @@ namespace CallCenterForWpf
 
                             }));
                             MessageBox.Show("下载完成！");
+                            if(_isTaskCreate)
+                            {
+                                CloseButton.Text = "关闭窗口";
+                            }
                         }
                         catch (Exception ex)
                         {
@@ -121,7 +134,18 @@ namespace CallCenterForWpf
 
         private void FlowComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            if (IsTaskCreatUse)
+            {
+                String workflowName = this.FlowComboBox.Text;
+                if (String.IsNullOrEmpty(workflowName))
+                {
+                    MessageBox.Show("请选择一个工作流程！");
+                }
+                else
+                {
+                    CloseButton.Text = "关闭窗口";
+                }
+            }
         }
 
         private void DownloadVoiceDialog_FormClosing(object sender, FormClosingEventArgs e)
@@ -137,6 +161,22 @@ namespace CallCenterForWpf
                 }
                 SelectWorkflowID = PageCommon.Dict[workflowName];
             }
+        }
+
+        private void CloseButton_Click(object sender, EventArgs e)
+        {
+            if (IsTaskCreatUse)
+            {
+                String workflowName = this.FlowComboBox.Text;
+                if (String.IsNullOrEmpty(workflowName))
+                {
+                    MessageBox.Show("请选择一个工作流程！");
+                    return;
+                }
+                SelectWorkflowID = PageCommon.Dict[workflowName];
+            }
+            this.Close();
+
         }
     }
 }
