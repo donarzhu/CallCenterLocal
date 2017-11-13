@@ -84,6 +84,19 @@ namespace CallCenterForWpf
                 {
                     MessageBox.Show("测试发送成功。");
                 }
+                else
+                {
+                    TestResultError ret = (TestResultError)HttpControl.JsonToObject<TestResultError>(strResult);
+                    if (ret != null)
+                    {
+                        MessageBox.Show(ret.error);
+                    }
+                    else
+                    {
+                        MessageBox.Show("服务器连接错误");
+                    }
+                    return;
+                }
                 phoneControl.startDialPstn(result.result, MainWindow.main.Token.TokenCode);
 
             }

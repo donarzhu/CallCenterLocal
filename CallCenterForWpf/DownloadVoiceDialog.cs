@@ -17,6 +17,7 @@ namespace CallCenterForWpf
     {
         bool _isTaskCreate = false;
         ToolTip buttontTt = new ToolTip();
+        public bool IsCancel { get; private set; } = true;
         public Boolean IsTaskCreatUse {
             get { return _isTaskCreate; }
             set { _isTaskCreate = value;
@@ -62,6 +63,11 @@ namespace CallCenterForWpf
                     string param = HttpControl.ObjectToJson(flow);
                     string cmd = HttpControl.GeUrlInfoCmd + flow.flow_id + "/bot/";
                     String strResult = HttpControl.GetHttpResponseList(cmd, 500, this.Token.TokenCode);
+                    if(strResult==null)
+                    {
+                        MessageBox.Show("该流程没有录音文件");
+                        return;
+                    }
                     ResultFtpInfo ret = (ResultFtpInfo)HttpControl.JsonToObject<ResultFtpInfo>(strResult);
                     if (strResult == null)
                     {
@@ -150,17 +156,6 @@ namespace CallCenterForWpf
 
         private void DownloadVoiceDialog_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if(IsTaskCreatUse)
-            {
-                String workflowName = this.FlowComboBox.Text;
-                if (String.IsNullOrEmpty(workflowName))
-                {
-                    MessageBox.Show("请选择工作流程！");
-                    e.Cancel = true;
-                    return;
-                }
-                SelectWorkflowID = PageCommon.Dict[workflowName];
-            }
         }
 
         private void CloseButton_Click(object sender, EventArgs e)
@@ -175,6 +170,7 @@ namespace CallCenterForWpf
                 }
                 SelectWorkflowID = PageCommon.Dict[workflowName];
             }
+            IsCancel = false;
             this.Close();
 
         }

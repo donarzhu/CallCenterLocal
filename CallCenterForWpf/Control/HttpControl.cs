@@ -10,6 +10,7 @@ using System.Web.Script.Serialization;
 using CallCenterLocal.Data;
 using CallCenterForWpf;
 using CallCenterForWpf.Data;
+using System.Windows;
 
 namespace CallCenterLocal.Control
 {
@@ -143,11 +144,12 @@ namespace CallCenterLocal.Control
                 string retString = myStreamReader.ReadToEnd();
                 myStreamReader.Close();
                 myResponseStream.Close();
-                
                 return retString;
             }
             catch(Exception e)
             {
+                //MessageBox.Show("服务器连接报错："+e.Message);
+                Console.WriteLine(e.Message);
                 return null;
             }
 

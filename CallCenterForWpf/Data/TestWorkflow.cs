@@ -25,4 +25,10 @@ namespace CallCenterLocal.Data
         public int status { get; set; }
         public DialPhoneInfo[] result { set; get; }
     }
+
+    public class TestResultError
+    {
+        public string state { get; set; }
+        public string error { get; set; }
+    }
 }

@@ -26,7 +26,10 @@ namespace CallCenterForWpf
                 var settings = new CefSettings()
                 {
                     //By default CefSharp will use an in-memory cache, you need to specify a Cache Folder to persist data
-                    CachePath = Path.Combine(Directory.GetCurrentDirectory(), "CefSharp\\Cache")
+                    CachePath = Path.Combine(Directory.GetCurrentDirectory(), "CefSharp\\Cache"),
+                    Locale = "zh-CN",
+                    LogFile = "/LogData",
+                    UserAgent = "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36"
                 };
                 settings.CefCommandLineArgs.Add("enable-media-stream", "1");
                 //Perform dependency check to make sure all relevant resources are in our output directory.

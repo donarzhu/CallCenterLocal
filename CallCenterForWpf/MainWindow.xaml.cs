@@ -356,6 +356,11 @@ namespace CallCenterForWpf
                                 ShowText = "如果已经下载流程语音请选择流程后关闭窗口。"
                             };
                             dlg.ShowDialog();
+                            if (dlg.IsCancel)
+                            {
+                                System.Windows.MessageBox.Show("任务创建取消！");
+                                return;
+                            }
                             String wId = dlg.SelectWorkflowID;
                             var ret = mCookieManager.SetCookieAsync("https://"+Domain, new Cookie()
                             {
@@ -412,6 +417,7 @@ namespace CallCenterForWpf
             ClearCookie();
             isExit = true;
             phoneControl.closeDev();
+            Cef.Shutdown();
             if (sender == closeButton)
                 System.Windows.Application.Current.Shutdown(-1);
         }
@@ -419,6 +425,7 @@ namespace CallCenterForWpf
         private void ClearCookie()
         {
             Token.TokenCode = "";
+            userName.Text = "";
             mCookieManager.DeleteCookies(Domain, TokenKey);
         }
 
@@ -484,7 +491,7 @@ namespace CallCenterForWpf
                         {
                             Thread getDialPhoneManagerThread = new Thread(() =>
                             {
-                                while (!this.isExit)
+                                while (!this.isExit && !String.IsNullOrEmpty(Token.TokenCode))
                                 {
                                     Thread.Sleep(ThreadSleepTime);
                                     try
@@ -498,7 +505,8 @@ namespace CallCenterForWpf
                                             dialInfos[i] = info;
                                             i++;
                                         }
-                                        phoneControl.startDialPstn(dialInfos, this.Token.TokenCode);
+                                        if(dialInfos.Length > 0)
+                                            phoneControl.startDialPstn(dialInfos, this.Token.TokenCode);
                                     }
                                     catch (Exception ex)
                                     {
@@ -556,6 +564,14 @@ namespace CallCenterForWpf
                 this.Browser.Height = this.mainPanel.Height;
                 this.frame.Visibility = Visibility.Hidden;
                 this.Browser.Address = pageInfo.PageUri;
+                //try
+                //{
+                //    this.Browser.Reload(true);
+                //}
+                //catch(Exception ex)
+                //{
+
+                //}
             }
 
         }

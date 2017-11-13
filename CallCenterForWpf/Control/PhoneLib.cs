@@ -47,7 +47,7 @@ namespace CallCenterLocal.Control
 
         public Int32 startDialPstn(DialPhoneInfo[] dialData, string token)
         {
-            if (dialData.Length <= 0)
+            if (dialData==null||dialData.Length <= 0)
                 return -1;
             phoneDll.PHONE.tag_dial_Data[] m_tagdialData1 = new phoneDll.PHONE.tag_dial_Data[dialData.Length];
             for(int i = 0;i<dialData.Length;i++)
