@@ -32,6 +32,7 @@ namespace CallCenterForWpf
                     UserAgent = "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36"
                 };
                 settings.CefCommandLineArgs.Add("enable-media-stream", "1");
+                settings.CefCommandLineArgs.Add("disable-gpu", "1");
                 //Perform dependency check to make sure all relevant resources are in our output directory.
                 Cef.Initialize(settings, performDependencyCheck: true, browserProcessHandler: null);
 

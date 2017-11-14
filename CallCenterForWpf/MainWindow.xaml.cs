@@ -20,6 +20,7 @@ using CallCenterLocal.Data;
 using CallCenterLocal.Control;
 using CefSharp;
 using System.Threading;
+using CefSharp.Wpf;
 
 namespace CallCenterForWpf
 {
@@ -123,7 +124,7 @@ namespace CallCenterForWpf
         public const string statisticsUri = "https://ccc.aicyber.com/static/dist/index.html#/statistics";
         private const String loginCmd = "login";
         public const string TokenKey = "auth_t";
-        public const int ThreadSleepTime = 5000;
+        public const int ThreadSleepTime = 30000;
         public const int waitThreadSleepTime = 500;
         public bool isExit { get; private set; } = false;
         double SrcWidth { get; set; }
@@ -164,6 +165,8 @@ namespace CallCenterForWpf
                 frame.KeyDown += Frame_KeyDown;
                 Browser.DownloadHandler = new DownloadHandler();
                 Browser.FrameLoadEnd += Browser_FrameLoadEnd;
+                Browser.PreviewTextInput += Browser_PreviewTextInput;
+ 
 
                 loginPage = new login();
                 PageInfo loginPafge = new PageInfo(
@@ -180,6 +183,18 @@ namespace CallCenterForWpf
             {
                 Console.WriteLine(e.Message);
             }
+        }
+
+        private void Browser_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            foreach (var character in e.Text)
+            {
+                // 把每个字符向浏览器组件发送一遍
+                Browser.GetBrowser().GetHost().SendKeyEvent((int)WM.CHAR, (int)character, 0);
+            }
+
+            // 不让cef自己处理
+            e.Handled = true;
         }
 
         void initData()
@@ -493,7 +508,6 @@ namespace CallCenterForWpf
                             {
                                 while (!this.isExit && !String.IsNullOrEmpty(Token.TokenCode))
                                 {
-                                    Thread.Sleep(ThreadSleepTime);
                                     try
                                     {
                                         String retString = HttpControl.GetHttpResponseList(HttpControl.GetNeedCallPhoneCmd, 50000, Token.TokenCode);
@@ -507,6 +521,7 @@ namespace CallCenterForWpf
                                         }
                                         if(dialInfos.Length > 0)
                                             phoneControl.startDialPstn(dialInfos, this.Token.TokenCode);
+                                        Thread.Sleep(ThreadSleepTime);
                                     }
                                     catch (Exception ex)
                                     {
@@ -609,7 +624,7 @@ namespace CallCenterForWpf
             mainPanel.Children.Add(Browser);
             Browser.DownloadHandler = new DownloadHandler();
             Browser.FrameLoadEnd += Browser_FrameLoadEnd;
-
+            Browser.PreviewTextInput += Browser_PreviewTextInput;
             //PageInfo.RemoveCommad(loginCmd);
             //loginPage = new login();
             //PageInfo loginPafge = new PageInfo(

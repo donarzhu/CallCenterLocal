@@ -1653,6 +1653,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.6.1"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.6.1 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.6.1"
+                    }
+                }
             }
         }
     }
@@ -6165,21 +6173,21 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:呼叫中心单机版"
-        "ProductCode" = "8:{F3810002-1F19-4424-9C10-2117A1BB3CC6}"
-        "PackageCode" = "8:{F0A568A3-D474-4405-9E39-B20C377B5B26}"
+        "ProductCode" = "8:{24AFD7F9-8748-42C3-84C5-25E13A1FDF34}"
+        "PackageCode" = "8:{B62C8DB6-73FF-4394-839F-C853BD57E9AD}"
         "UpgradeCode" = "8:{6BD5EA9A-6859-46A6-936F-4CAE3C8F0A30}"
         "AspNetVersion" = "8:"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.0.3"
+        "ProductVersion" = "8:1.0.5"
         "Manufacturer" = "8:Aicyber"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
         "Title" = "8:呼叫中心单机版"
         "Subject" = "8:"
-        "ARPCONTACT" = "8:天津神思维科技有限公司"
+        "ARPCONTACT" = "8:天津深思维科技有限公司"
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:"
         "ARPURLINFOABOUT" = "8:"
