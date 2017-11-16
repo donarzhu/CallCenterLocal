@@ -54,7 +54,7 @@
                 </Grid>
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="30"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
                     <DockPanel Height="50" Grid.Column="0" >
@@ -62,7 +62,8 @@
                     </DockPanel>
                     <DockPanel Height="50" Grid.Column="1" >
                         <Button Name="TestButton" Width="100" DockPanel.Dock="Right" Height="30" Background="White" Content="开始拨打" Margin="0,0,30,0" Click="TestButton_Click"/>
-                        <Canvas DockPanel.Dock="Left"/>
+                        <TextBlock DockPanel.Dock="Left" TextWrapping="Wrap" Foreground="#FFFF0101" Text="没有录音文件的流程拨打出的电话会立即挂断，请确认当前流程是否已下载录音文件"
+                                   Margin="10,5,10,5" FontWeight="Bold" FontSize="13"/>
                     </DockPanel>
                 </Grid>
                 <StackPanel Margin="10,10,10,10">
