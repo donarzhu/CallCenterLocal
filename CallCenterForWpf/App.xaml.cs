@@ -1,6 +1,9 @@
 ﻿using CefSharp;
 using System;
+using System.Diagnostics;
 using System.IO;
+using System.Reflection;
+using System.Security.Principal;
 using System.Windows;
 
 namespace CallCenterForWpf
@@ -13,7 +16,10 @@ namespace CallCenterForWpf
         System.Threading.Mutex mutex;
         public App()
         {
-            this.Startup += new StartupEventHandler((sender,e)=> {
+
+            CheckAdministrator();
+            this.Startup += new StartupEventHandler((sender, e) =>
+            {
                 bool ret;
                 mutex = new System.Threading.Mutex(true, "CallCenterLocalApp", out ret);
 
@@ -39,5 +45,38 @@ namespace CallCenterForWpf
             });
 
         }
+
+        private void CheckAdministrator()
+        {
+            var wi = WindowsIdentity.GetCurrent();
+            var wp = new WindowsPrincipal(wi);
+
+            bool runAsAdmin = wp.IsInRole(WindowsBuiltInRole.Administrator);
+
+            if (!runAsAdmin)
+            {
+                // It is not possible to launch a ClickOnce app as administrator directly,  
+                // so instead we launch the app as administrator in a new process.  
+                var processInfo = new ProcessStartInfo(Assembly.GetExecutingAssembly().CodeBase);
+
+                // The following properties run the new process as administrator  
+                processInfo.UseShellExecute = true;
+                processInfo.Verb = "runas";
+
+                // Start the new process  
+                try
+                {
+                    Process.Start(processInfo);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+                MessageBox.Show("请用管理员权限运行");
+                // Shut down the current process  
+                Environment.Exit(0);
+            }
+        }
     }
+
 }
